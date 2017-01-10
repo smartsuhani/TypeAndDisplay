@@ -1,0 +1,78 @@
+//
+//  ViewController.swift
+//  TypeAndDisplay
+//
+//  Created by Devloper30 on 09/01/17.
+//  Copyright © 2017 lanetteamLanet. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+//MARK: Properties
+    
+    @IBOutlet var txtInput: UITextField!
+    @IBOutlet var ViewTxt: UILabel!
+    @IBOutlet var imgView: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ViewTxt.text = "Enter your Name"
+        txtInput.delegate = self
+        
+    }
+    
+    //MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        imgView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: UITextFieldDelegate
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        ViewTxt.text = textField.text
+        
+    }
+    
+    /*func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    */
+    @IBAction func onTextChange(_ sender: AnyObject) {
+        if txtInput.text != nil{
+            ViewTxt.text = txtInput.text
+        }
+    }
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    //MARK: Action
+    
+    @IBAction func TapOnImage(_ sender: UITapGestureRecognizer) {
+        txtInput.resignFirstResponder()
+        
+        let ImagePickerController = UIImagePickerController()
+        ImagePickerController.sourceType = .photoLibrary
+        ImagePickerController.delegate = self
+        present(ImagePickerController, animated: true, completion: nil)
+    }
+    @IBAction func setDefaultLabel(_ sender: AnyObject) {
+        ViewTxt.text = "Default Text"
+    }
+}
+
