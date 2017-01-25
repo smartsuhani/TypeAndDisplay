@@ -14,12 +14,17 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     @IBOutlet var txtInput: UITextField!
     @IBOutlet var ViewTxt: UILabel!
+    @IBOutlet var backbtn: UIButton!
+    @IBOutlet var nextbtn: UIButton!
     @IBOutlet var imgView: UIImageView!
+    var window: UIWindow?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ViewTxt.text = "Enter your Name"
         txtInput.delegate = self
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
     }
     
@@ -63,6 +68,15 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     //MARK: Action
     
+    @IBAction func gotonext(_ sender: UIButton) {
+        let third:ThirdViewController = ThirdViewController()
+        self.navigationController?.pushViewController(third, animated: true)
+    }
+    @IBAction func backtomain(_ sender: UIButton) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        }
+    }
     @IBAction func TapOnImage(_ sender: UITapGestureRecognizer) {
         txtInput.resignFirstResponder()
         

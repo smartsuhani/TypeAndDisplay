@@ -12,10 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var navController: UINavigationController?
+    var viewController1: SecondViewController?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        navController = UINavigationController()
+        viewController1 = SecondViewController()
+        
+        self.navController!.pushViewController(viewController1!, animated: true)
+        
+        self.window!.rootViewController = navController
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
