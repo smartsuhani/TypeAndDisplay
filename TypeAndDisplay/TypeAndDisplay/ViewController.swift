@@ -9,11 +9,16 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet var backbtn: UIButton!
     @IBOutlet var nextbtn: UIButton!
     @IBOutlet var imgView: UIImageView!
+    var mystring: String?
     var window: UIWindow?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ViewTxt.text = "Enter your Name"
+        if mystring != nil{
+            ViewTxt.text = mystring!
+        }else{
+            ViewTxt.text = "Enter Any Value"
+        }
         txtInput.delegate = self
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)

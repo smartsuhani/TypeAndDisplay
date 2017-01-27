@@ -11,7 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="TypeAndDisplay" customModuleProvider="target">
             <connections>
+                <outlet property="addBtn" destination="K0v-Ey-qZs" id="hPM-pQ-Ow7"/>
                 <outlet property="btn1" destination="nZb-nT-WWx" id="ZW5-kl-l1U"/>
+                <outlet property="table" destination="6Sf-Tk-MJS" id="I0y-h1-PiT"/>
+                <outlet property="txtInput1" destination="17s-p6-CuG" id="1a3-vM-2PW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,13 +49,27 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZb-nT-WWx">
                     <rect key="frame" x="164" y="107" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Next"/>
                     <connections>
                         <action selector="change:" destination="-1" eventType="touchDown" id="Nsa-Yl-28V"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sf-Tk-MJS">
+                    <rect key="frame" x="67" y="356" width="240" height="291"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0v-Ey-qZs">
+                    <rect key="frame" x="218" y="107" width="105" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Add to Table"/>
+                    <connections>
+                        <action selector="addToTable:" destination="-1" eventType="touchDown" id="0S2-73-xeb"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="-575.5" y="-235.5"/>
         </view>
     </objects>
 </document>
