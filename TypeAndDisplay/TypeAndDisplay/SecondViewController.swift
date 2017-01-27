@@ -1,6 +1,6 @@
 import UIKit
 
-class SecondViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class SecondViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
     //MARK: UIObject
     @IBOutlet var btn1: UIButton!
@@ -13,6 +13,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     var tablecelltext: [String] = []
     let cell = "cell"
+    var selected: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         table.delegate = self
         table.dataSource = self
+        txtInput1.delegate = self
         
         if(switch1.isOn){
             table.allowsMultipleSelection = true
@@ -29,6 +31,15 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
             table.allowsMultipleSelection = false
         }
         
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtInput1.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        tablecelltext[selected!] = txtInput1.text!
+        selected = nil
+        table.reloadData()
     }
 
     
@@ -92,6 +103,9 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     @IBAction func updateTable(_ sender: UIButton) {
+        update();
+    }
+    func update(){
         if (table.indexPathsForSelectedRows?.count) ?? 0 > 0 {
             if txtInput1.text != "" {
                 if let indexPaths = table.indexPathsForSelectedRows  {
@@ -106,9 +120,12 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
                 }
             }
         }else if((table.indexPathForSelectedRow?.item) ?? -1 > -1){
-                if txtInput1.text != "" {
-                    tablecelltext[(table.indexPathForSelectedRow?.item)!] = txtInput1.text!
-                }
+            if txtInput1.text != "" {
+                tablecelltext[(table.indexPathForSelectedRow?.item)!] = txtInput1.text!
+            }
+        }else if((table.indexPathForSelectedRow?.item) ?? -1 == -1 && selected != nil){
+            tablecelltext[selected!] = txtInput1.text!
+            selected = nil
         }else{
             print("no item selected")
         }
@@ -143,8 +160,25 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        txtInput1.text = tablecelltext[indexPath.row]
         print("You tapped cell number \(indexPath.row).")
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete", handler: { (action, indexPath) in
+            print("Delete tapped")
+            self.tablecelltext.remove(at: indexPath.item)
+            tableView.reloadData()
+            
+        })
+        deleteAction.backgroundColor = UIColor.red
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: { (action, indexPath) in
+            self.txtInput1.text = self.tablecelltext[indexPath.item]
+            self.txtInput1.setNeedsFocusUpdate()
+            self.selected = indexPath.item
+            print("Edit tapped")
+            
+        })
+        editAction.backgroundColor = UIColor.blue
+        return [editAction,deleteAction]
     }
 
 }
