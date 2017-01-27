@@ -7,8 +7,11 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet var txtInput1: UITextField!
     @IBOutlet var table: UITableView!
     @IBOutlet var addBtn: UIButton!
+    @IBOutlet var delete: UIButton!
+    @IBOutlet var switch1: UISwitch!
+    @IBOutlet var updateBtn: UIButton!
     
-    var tablecelltext: [String] = ["kunjal"]
+    var tablecelltext: [String] = []
     let cell = "cell"
     
     override func viewDidLoad() {
@@ -19,6 +22,12 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         table.delegate = self
         table.dataSource = self
+        
+        if(switch1.isOn){
+            table.allowsMultipleSelection = true
+        }else{
+            table.allowsMultipleSelection = false
+        }
         
     }
 
@@ -43,7 +52,68 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     
+    @IBAction func deleteCell(_ sender: UIButton) {
+        if(tablecelltext.count != 0){
+            if txtInput1.text != "" && ((table.indexPathsForSelectedRows)?.count ?? 0) < 2 {
+                if(tablecelltext.contains(txtInput1.text!)){
+                    let a = tablecelltext.count
+                    for _ in (0...a){
+                        if(tablecelltext.contains(txtInput1.text!))
+                        {
+                            print(txtInput1.text!)
+                            tablecelltext.remove(at: tablecelltext.index(of: txtInput1.text!)!)
+                        }
+                    }
+                }
+            }else{
+                if let indexPaths = table.indexPathsForSelectedRows  {
+                
+                    let sortedArray = indexPaths.sorted {$0.row < $1.row}
+                
+                    for i in (0...sortedArray.count-1).reversed() {
+                    
+                        tablecelltext.remove(at: sortedArray[i].row)
+                    }
+                    table.deleteRows(at: sortedArray, with: .automatic)
+                
+                }
+            }
+        }else{
+            print("table ma kai nathi")
+        }
+        table.reloadData()
+    }
     
+    @IBAction func changeOption(_ sender: UISwitch) {
+        if table.allowsMultipleSelection == true {
+            table.allowsMultipleSelection = false
+        }else{
+            table.allowsMultipleSelection = true
+        }
+    }
+    @IBAction func updateTable(_ sender: UIButton) {
+        if (table.indexPathsForSelectedRows?.count) ?? 0 > 0 {
+            if txtInput1.text != "" {
+                if let indexPaths = table.indexPathsForSelectedRows  {
+                    
+                    let sortedArray = indexPaths.sorted {$0.row < $1.row}
+                    
+                    for i in (0...sortedArray.count-1).reversed() {
+                        
+                        tablecelltext[sortedArray[i].row] = txtInput1.text!
+                    }
+                    
+                }
+            }
+        }else if((table.indexPathForSelectedRow?.item) ?? -1 > -1){
+                if txtInput1.text != "" {
+                    tablecelltext[(table.indexPathForSelectedRow?.item)!] = txtInput1.text!
+                }
+        }else{
+            print("no item selected")
+        }
+        table.reloadData()
+    }
     /*
     // MARK: - Navigation
 
@@ -73,6 +143,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        txtInput1.text = tablecelltext[indexPath.row]
         print("You tapped cell number \(indexPath.row).")
     }
 
