@@ -1,11 +1,3 @@
-//
-//  SecondViewController.swift
-//  TypeAndDisplay
-//
-//  Created by Devloper30 on 25/01/17.
-//  Copyright © 2017 lanetteamLanet. All rights reserved.
-//
-
 import UIKit
 
 class SecondViewController: UIViewController {
