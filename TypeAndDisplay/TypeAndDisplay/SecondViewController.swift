@@ -37,9 +37,11 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if(selected != nil){
         tablecelltext[selected!] = txtInput1.text!
         selected = nil
         table.reloadData()
+        }
     }
 
     
