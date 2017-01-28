@@ -16,6 +16,8 @@
 		7B2ABAAE1E23942500EFC05B /* TypeAndDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2ABAAD1E23942500EFC05B /* TypeAndDisplayUITests.swift */; };
 		7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33282D1E38884C00814C0C /* SecondViewController.swift */; };
 		7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B33282E1E38884C00814C0C /* SecondViewController.xib */; };
+		7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B34AC371E3CC5950034DBFB /* photoViewCell.swift */; };
+		7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34AC381E3CC5950034DBFB /* photoViewCell.xib */; };
 		7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */; };
 		7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		7B2ABAAF1E23942500EFC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B33282D1E38884C00814C0C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7B33282E1E38884C00814C0C /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		7B34AC371E3CC5950034DBFB /* photoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoViewCell.swift; sourceTree = "<group>"; };
+		7B34AC381E3CC5950034DBFB /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
 		7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,8 @@
 				7B33282E1E38884C00814C0C /* SecondViewController.xib */,
 				7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */,
 				7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */,
+				7B34AC371E3CC5950034DBFB /* photoViewCell.swift */,
+				7B34AC381E3CC5950034DBFB /* photoViewCell.xib */,
 			);
 			path = TypeAndDisplay;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 				7B2ABA981E23942500EFC05B /* LaunchScreen.storyboard in Resources */,
 				7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */,
 				7B2ABA951E23942500EFC05B /* Assets.xcassets in Resources */,
+				7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */,
 				7B2ABA931E23942500EFC05B /* Main.storyboard in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
 			);
@@ -278,6 +285,7 @@
 			files = (
 				7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */,
 				7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */,
+				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,
 			);
