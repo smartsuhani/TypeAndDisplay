@@ -11,6 +11,7 @@ private extension UICollectionView {
 
 class ThirdViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
 
+    @IBOutlet var nextbtn: UIButton!
     @IBOutlet var view1: UIView!
     @IBOutlet var collectionView: UICollectionView!
     var collectionViewLayout = UICollectionViewController().collectionViewLayout
@@ -64,6 +65,9 @@ class ThirdViewController: UIViewController,UICollectionViewDelegateFlowLayout,U
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
         }
+    }
+    @IBAction func next(_ sender: Any) {
+        self.navigationController?.pushViewController(FourthViewController(), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

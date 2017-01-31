@@ -38,7 +38,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }else{
             table.allowsMultipleSelection = false
         }
-        print(getfile())
+        //getfile()
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -201,26 +201,15 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         return [editAction,deleteAction]
     }
     func getfile(){
-        let file = "1.txt" //this is the file. we will write to and read from it
-        
-        let text = "some text" //just a text
-        
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            
-            let path = dir.appendingPathComponent(file)
-            
-            //writing
+        if let filepath = Bundle.main.path(forResource: "1", ofType: "json") {
             do {
-                try text.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                let contents = try String(contentsOfFile: filepath)
+                print(contents)
+            } catch {
+                print("Content could not loaded")
             }
-            catch {/* error handling here */}
-            
-            //reading
-            do {
-                _ = try String(contentsOf: path, encoding: String.Encoding.utf8)
-            }
-            catch {/* error handling here */}
+        } else {
+                print("File Not Found")
         }
     }
-
 }
