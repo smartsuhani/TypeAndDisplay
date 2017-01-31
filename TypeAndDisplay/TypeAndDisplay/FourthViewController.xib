@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FourthViewController" customModule="TypeAndDisplay" customModuleProvider="target">
             <connections>
                 <outlet property="BtnBack" destination="B6p-jw-ORs" id="hto-dY-TyZ"/>
+                <outlet property="BtnNext" destination="V6H-c5-OCj" id="btn-6U-5ng"/>
                 <outlet property="BtnRoot" destination="ENx-hu-86e" id="CQD-f5-HrZ"/>
                 <outlet property="tableView" destination="CLx-S5-A9c" id="jVr-FN-bpR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -55,6 +56,14 @@
                     <state key="normal" title="Back"/>
                     <connections>
                         <action selector="goBack:" destination="-1" eventType="touchDown" id="n7K-Ay-MQS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6H-c5-OCj">
+                    <rect key="frame" x="171" y="617" width="32" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="goNext:" destination="-1" eventType="touchDown" id="qcc-PV-ni2"/>
                     </connections>
                 </button>
             </subviews>
