@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="backbtn" destination="Gaa-6h-Ctm" id="mke-lg-c1H"/>
                 <outlet property="collectionView" destination="EYF-05-yse" id="mbw-dp-sb5"/>
+                <outlet property="nextbtn" destination="YZG-Ty-XTC" id="kx3-Pa-DjH"/>
                 <outlet property="rootbtn" destination="aE6-3Y-iNH" id="Bpy-Oh-eov"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view1" destination="vGa-BZ-HpY" id="aLn-uN-R5r"/>
@@ -24,11 +25,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGa-BZ-HpY">
-                    <rect key="frame" x="8" y="31" width="359" height="553"/>
+                    <rect key="frame" x="8" y="27" width="359" height="557"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EYF-05-yse">
-                            <rect key="frame" x="0.0" y="0.0" width="359" height="553"/>
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="557"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7pl-Na-As2">
@@ -57,9 +58,17 @@
                         <action selector="gotoroot:" destination="-1" eventType="touchDown" id="tpA-vo-JKT"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZG-Ty-XTC">
+                    <rect key="frame" x="164" y="21" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="next:" destination="-1" eventType="touchDown" id="Rsi-1a-825"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-715.5" y="776.5"/>
+            <point key="canvasLocation" x="-692.5" y="657.5"/>
         </view>
     </objects>
 </document>
