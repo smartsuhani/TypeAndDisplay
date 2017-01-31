@@ -10,8 +10,10 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet var delete: UIButton!
     @IBOutlet var switch1: UISwitch!
     @IBOutlet var updateBtn: UIButton!
+    var refresh: UIRefreshControl!
+    var timer: Timer!
     
-    var tablecelltext: [String] = []
+    var tablecelltext: [String] = ["Google"]
     let cell = "cell"
     var selected: Int?
     
@@ -19,7 +21,13 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.table.register(UITableViewCell.self, forCellReuseIdentifier: cell)
+        refresh = UIRefreshControl()
+        
+        refresh.backgroundColor = UIColor.cyan
+        table.addSubview(refresh)
+        refresh.addTarget(self, action: #selector(self.reload1(_:)), for: UIControlEvents.valueChanged)
+        
+        table.register(UINib(nibName: "CellView",bundle: nil), forCellReuseIdentifier: "CellView")
         
         table.delegate = self
         table.dataSource = self
@@ -30,6 +38,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }else{
             table.allowsMultipleSelection = false
         }
+        print(getfile())
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -37,13 +46,21 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if(selected != nil){
         tablecelltext[selected!] = txtInput1.text!
         selected = nil
-        table.reloadData()
+        //table.reloadData()
+        }
     }
-
-    
-    
+    func reload1(_ sender: AnyObject?){
+//        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(SecondViewController.refresh1(_:)), userInfo: nil, repeats: true)
+        table.reloadData()
+        refresh.endRefreshing()
+    }
+    func refresh1(_ sender: AnyObject){
+        table.reloadData()
+        refresh.endRefreshing()
+    }
     //MARK: UIObjectActions
     
     @IBAction func change(_ sender: UIButton) {
@@ -92,7 +109,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }else{
             print("table ma kai nathi")
         }
-        table.reloadData()
+        //table.reloadData()
     }
     
     @IBAction func changeOption(_ sender: UISwitch) {
@@ -129,7 +146,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }else{
             print("no item selected")
         }
-        table.reloadData()
+        //table.reloadData()
     }
     /*
     // MARK: - Navigation
@@ -150,10 +167,13 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // create a new cell if needed or reuse an old one
-        let cell:UITableViewCell = self.table.dequeueReusableCell(withIdentifier: self.cell) as UITableViewCell!
+        let cell = table.dequeueReusableCell(withIdentifier: "CellView", for: indexPath) as! CellView
         
         // set the text from the data model
-        cell.textLabel?.text = self.tablecelltext[indexPath.row]
+        
+        cell.lblName.text = self.tablecelltext[indexPath.row]
+        cell.lblSubtitle.text = "Name of Person"
+        cell.imgView.image = UIImage(named: "Google")
         
         return cell
     }
@@ -179,6 +199,28 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         })
         editAction.backgroundColor = UIColor.blue
         return [editAction,deleteAction]
+    }
+    func getfile(){
+        let file = "1.txt" //this is the file. we will write to and read from it
+        
+        let text = "some text" //just a text
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let path = dir.appendingPathComponent(file)
+            
+            //writing
+            do {
+                try text.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+            }
+            catch {/* error handling here */}
+            
+            //reading
+            do {
+                _ = try String(contentsOf: path, encoding: String.Encoding.utf8)
+            }
+            catch {/* error handling here */}
+        }
     }
 
 }

@@ -16,6 +16,11 @@
 		7B2ABAAE1E23942500EFC05B /* TypeAndDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2ABAAD1E23942500EFC05B /* TypeAndDisplayUITests.swift */; };
 		7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B33282D1E38884C00814C0C /* SecondViewController.swift */; };
 		7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B33282E1E38884C00814C0C /* SecondViewController.xib */; };
+		7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B34AC371E3CC5950034DBFB /* photoViewCell.swift */; };
+		7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34AC381E3CC5950034DBFB /* photoViewCell.xib */; };
+		7B781F091E3F306300D42A68 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B781F071E3F306300D42A68 /* CellView.swift */; };
+		7B781F0A1E3F306300D42A68 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B781F081E3F306300D42A68 /* CellView.xib */; };
+		7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B781F0C1E3F67B600D42A68 /* 1.txt */; };
 		7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */; };
 		7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,11 @@
 		7B2ABAAF1E23942500EFC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B33282D1E38884C00814C0C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7B33282E1E38884C00814C0C /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		7B34AC371E3CC5950034DBFB /* photoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoViewCell.swift; sourceTree = "<group>"; };
+		7B34AC381E3CC5950034DBFB /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
+		7B781F071E3F306300D42A68 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		7B781F081E3F306300D42A68 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		7B781F0C1E3F67B600D42A68 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
 		7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,16 +115,15 @@
 		7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				7B781F0B1E3F5A1F00D42A68 /* Refresh Animation */,
+				7B781F061E3F301100D42A68 /* TableCells */,
+				7B781F051E3F2FC000D42A68 /* Views */,
 				7B2ABA8D1E23942500EFC05B /* AppDelegate.swift */,
 				7B2ABA8F1E23942500EFC05B /* ViewController.swift */,
 				7B2ABA911E23942500EFC05B /* Main.storyboard */,
 				7B2ABA941E23942500EFC05B /* Assets.xcassets */,
 				7B2ABA961E23942500EFC05B /* LaunchScreen.storyboard */,
 				7B2ABA991E23942500EFC05B /* Info.plist */,
-				7B33282D1E38884C00814C0C /* SecondViewController.swift */,
-				7B33282E1E38884C00814C0C /* SecondViewController.xib */,
-				7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */,
-				7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */,
 			);
 			path = TypeAndDisplay;
 			sourceTree = "<group>";
@@ -135,6 +144,36 @@
 				7B2ABAAF1E23942500EFC05B /* Info.plist */,
 			);
 			path = TypeAndDisplayUITests;
+			sourceTree = "<group>";
+		};
+		7B781F051E3F2FC000D42A68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B33282D1E38884C00814C0C /* SecondViewController.swift */,
+				7B33282E1E38884C00814C0C /* SecondViewController.xib */,
+				7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */,
+				7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */,
+				7B34AC371E3CC5950034DBFB /* photoViewCell.swift */,
+				7B34AC381E3CC5950034DBFB /* photoViewCell.xib */,
+				7B781F0C1E3F67B600D42A68 /* 1.txt */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7B781F061E3F301100D42A68 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				7B781F071E3F306300D42A68 /* CellView.swift */,
+				7B781F081E3F306300D42A68 /* CellView.xib */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		7B781F0B1E3F5A1F00D42A68 /* Refresh Animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Refresh Animation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +289,9 @@
 				7B2ABA981E23942500EFC05B /* LaunchScreen.storyboard in Resources */,
 				7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */,
 				7B2ABA951E23942500EFC05B /* Assets.xcassets in Resources */,
+				7B781F0A1E3F306300D42A68 /* CellView.xib in Resources */,
+				7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */,
+				7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */,
 				7B2ABA931E23942500EFC05B /* Main.storyboard in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
 			);
@@ -278,6 +320,8 @@
 			files = (
 				7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */,
 				7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */,
+				7B781F091E3F306300D42A68 /* CellView.swift in Sources */,
+				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,
 			);
