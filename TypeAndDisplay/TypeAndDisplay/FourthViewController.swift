@@ -7,6 +7,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet var BtnRoot: UIButton!
     @IBOutlet var BtnBack: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var BtnNext: UIButton!
     var jsonDict: NSMutableArray = []
     
     
@@ -35,6 +36,9 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
         }
+    }
+    @IBAction func goNext(_ sender: Any) {
+        self.navigationController?.pushViewController(FifthViewController(), animated: true)
     }
     
     // MARK: - TableView methods
