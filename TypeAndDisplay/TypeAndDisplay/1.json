@@ -7,7 +7,32 @@
               },
               {
               "name": "Vinny",
-              "age": "56",
+              "age": "30",
+              "image": "Google"
+              },
+              {
+              "name": "Alex",
+              "age": "25",
+              "image": "Google"
+              },
+              {
+              "name": "Max",
+              "age": "35",
+              "image": "Google"
+              },
+              {
+              "name": "H",
+              "age": "15",
+              "image": "Google"
+              },
+              {
+              "name": "B",
+              "age": "19",
+              "image": "Google"
+              },
+              {
+              "name": "A",
+              "age": "22",
               "image": "Google"
               }
               ]
