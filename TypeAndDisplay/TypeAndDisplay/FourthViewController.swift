@@ -1,7 +1,7 @@
 
 import UIKit
 
-class FourthViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class FourthViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate {
     
     //MARK: - UIOutlets
     @IBOutlet var BtnRoot: UIButton!
@@ -11,6 +11,7 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     var jsonDict: NSMutableArray = []
     var section1 = ["10-19","20-29","30-35"]
     var age1: [[String]] = [[],[],[]] //[[section1],[section2],[section3]]
+    var ukey:[[Int]] = [[],[],[]]
     var tbl: UITableViewController!
     
     override func viewDidLoad() {
@@ -77,12 +78,43 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .normal, title: "Delete", handler: { (action, indexPath) in
             print("delete trapped")
+            
+            var key = self.ukey[indexPath.section].remove(at: indexPath.row)
+            self.age1[indexPath.section].remove(at: indexPath.row)
+            for i in 0 ..< self.jsonDict.count{
+                let data = (self.jsonDict[i] as AnyObject).value(forKey: "key") as? Int
+                if(data == key){
+                    key = i
+                    break
+                }
+            }
+            
+            self.jsonDict.removeObject(at: key)
+            
+            print("NewData\(self.jsonDict)NewData")
+            self.tableView.reloadData()
+            
         })
         return [delete]
     }
-    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let item = age1[sourceIndexPath.section][sourceIndexPath.row]
+        print("\(item)ahbkinadinaifwbai")
+        age1[sourceIndexPath.section].remove(at: sourceIndexPath.row)
+        age1[destinationIndexPath.section].insert(item, at: destinationIndexPath.row)
+        
+        print(age1)
+        tableView.reloadData()
+        
+    }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section1[section]
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     func getfile(){
         if let filepath = Bundle.main.path(forResource: "1", ofType: "json") {
@@ -95,14 +127,16 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
                     let age = Int(((jsonDict[i] as AnyObject).value(forKey: "age") as? String)!)!
                     if(age >= 10 && age<20){
                         age1[0].append(((jsonDict[i] as AnyObject).value(forKey: "age") as? String)!)
+                        ukey[0].append(((jsonDict[i] as AnyObject).value(forKey: "key") as? Int)!)
                     }else if(age >= 20 && age<30){
                         age1[1].append(((jsonDict[i] as AnyObject).value(forKey: "age") as? String)!)
+                        ukey[1].append(((jsonDict[i] as AnyObject).value(forKey: "key") as? Int)!)
                     }else{
                         age1[2].append(((jsonDict[i] as AnyObject).value(forKey: "age") as? String)!)
+                        ukey[2].append(((jsonDict[i] as AnyObject).value(forKey: "key") as? Int)!)
                     }
                 }
                 
-                print(jsonDict)
                 
             } catch {
                 print("Content could not loaded")
@@ -113,7 +147,19 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     func updateFile() {
+        let path = "1.txt"
         
+        let file: FileHandle? = FileHandle(forUpdatingAtPath: path)
+        let data = ("hello world it first writing" as
+            NSString).data(using: String.Encoding.utf8.rawValue)
+        if file == nil {
+            print("File open failed")
+        } else {
+            
+            file?.seek(toFileOffset: 10)
+            file?.write(data!)
+            file?.closeFile()
+        }
     }
     
 }

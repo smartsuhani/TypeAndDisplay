@@ -40,6 +40,16 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         //getfile()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+    }
+    
+    func editButtonPressed(){
+        table.setEditing(!table.isEditing, animated: true)
+        if table.isEditing == true{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+        }else{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
+        }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         txtInput1.resignFirstResponder()
@@ -148,16 +158,9 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         //table.reloadData()
     }
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tablecelltext.count
@@ -199,6 +202,14 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         })
         editAction.backgroundColor = UIColor.blue
         return [editAction,deleteAction]
+    }
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let itemToMove = tablecelltext[sourceIndexPath.row]
+        tablecelltext.remove(at: sourceIndexPath.row)
+        tablecelltext.insert(itemToMove, at: destinationIndexPath.row)
     }
     func getfile(){
         if let filepath = Bundle.main.path(forResource: "1", ofType: "json") {
