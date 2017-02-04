@@ -13,6 +13,8 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
     var age1: [[String]] = [[],[],[]] //[[section1],[section2],[section3]]
     var ukey:[[Int]] = [[],[],[]]
     var tbl: UITableViewController!
+    let path = "/Users/itilak/Desktop/TypeAndDisplay/TypeAndDisplay/TypeAndDisplay/1.json"
+    
     
     override func viewDidLoad() {
         
@@ -90,10 +92,8 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             
             self.jsonDict.removeObject(at: key)
-            
-            print("NewData\(self.jsonDict)NewData")
             self.tableView.reloadData()
-            
+            self.updateFile()
         })
         return [delete]
     }
@@ -117,9 +117,9 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     func getfile(){
-        if let filepath = Bundle.main.path(forResource: "1", ofType: "json") {
+        
             do {
-                let contents: NSData = try NSData(contentsOfFile: filepath as String, options: NSData.ReadingOptions.dataReadingMapped)
+                let contents: NSData = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped)
                 let dict: NSDictionary!=(try! JSONSerialization.jsonObject(with: contents as Data, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
                 
                 for i in 0 ..< (dict.value(forKey: "person") as! NSArray).count{
@@ -141,24 +141,28 @@ class FourthViewController: UIViewController,UITableViewDelegate,UITableViewData
             } catch {
                 print("Content could not loaded")
             }
-        } else {
-            print("File Not Found")
-        }
         
     }
     func updateFile() {
-        let path = "1.txt"
+        print("FilePath: \(path)")
         
-        let file: FileHandle? = FileHandle(forUpdatingAtPath: path)
-        let data = ("hello world it first writing" as
-            NSString).data(using: String.Encoding.utf8.rawValue)
-        if file == nil {
-            print("File open failed")
-        } else {
+        do {
+            let data1 =  try JSONSerialization.data(withJSONObject: jsonDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let convertedString = String(data: data1, encoding: String.Encoding.utf8)
+            print("NewData\(convertedString!)NewData")
+            let text = "{\n\t\"person\":"+convertedString!+"\n}"
             
-            file?.seek(toFileOffset: 10)
-            file?.write(data!)
-            file?.closeFile()
+            // Write to the file
+            try text.write(toFile: path, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            print("Failed writing to URL: \(path), Error: " + error.localizedDescription)
+        }
+        
+        do {
+            let contents: NSData = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped)
+            print(NSString(data: contents as Data, encoding: String.Encoding.utf8.rawValue) as String!)
+        }catch{
+            print("data not available")
         }
     }
     

@@ -1,46 +1,40 @@
 {
-    "person":[
-              {
-              "key":1,
-              "name": "Bob",
-              "age": "16",
-              "image": "Apple"
-              },
-              {
-              "key":2,
-              "name": "Vinny",
-              "age": "30",
-              "image": "Apple"
-              },
-              {
-              "key":3,
-              "name": "Alex",
-              "age": "25",
-              "image": "Apple"
-              },
-              {
-              "key":4,
-              "name": "Max",
-              "age": "35",
-              "image": "Apple"
-              },
-              {
-              "key":5,
-              "name": "H",
-              "age": "15",
-              "image": "Apple"
-              },
-              {
-              "key":6,
-              "name": "B",
-              "age": "19",
-              "image": "Apple"
-              },
-              {
-              "key":7,
-              "name": "A",
-              "age": "22",
-              "image": "Apple"
-              }
-              ]
+	"person":[
+  {
+    "age" : "30",
+    "key" : 2,
+    "name" : "Vinny",
+    "image" : "Google"
+  },
+  {
+    "age" : "25",
+    "key" : 3,
+    "name" : "Alex",
+    "image" : "Google"
+  },
+  {
+    "age" : "35",
+    "key" : 4,
+    "name" : "Max",
+    "image" : "Google"
+  },
+  {
+    "age" : "15",
+    "key" : 5,
+    "name" : "H",
+    "image" : "Google"
+  },
+  {
+    "age" : "19",
+    "key" : 6,
+    "name" : "B",
+    "image" : "Google"
+  },
+  {
+    "age" : "22",
+    "key" : 7,
+    "name" : "A",
+    "image" : "Google"
+  }
+]
 }
