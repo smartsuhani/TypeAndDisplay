@@ -5,13 +5,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navController: UINavigationController?
-    var viewController1: SecondViewController?
+    var viewController1: RootViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window!.backgroundColor = UIColor.white
+//        let splitViewController =  UISplitViewController()
+//        let rootViewController = RootViewController()
+//        let detailViewController = DetailViewController()
+//        let rootNavigationController = UINavigationController(rootViewController:rootViewController)
+//        let detailNavigationController = UINavigationController(rootViewController:detailViewController)
+//        splitViewController.viewControllers = [rootNavigationController,detailNavigationController]
+//        self.window!.rootViewController = splitViewController
+//        self.window!.makeKeyAndVisible()
+//        return true
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         navController = UINavigationController()
-        viewController1 = SecondViewController()
+        viewController1 = RootViewController()
         
         self.navController!.pushViewController(viewController1!, animated: true)
         

@@ -14,11 +14,11 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if mystring != nil{
-            ViewTxt.text = mystring!
-        }else{
-            ViewTxt.text = "Enter Any Value"
-        }
+//        if mystring != nil{
+//            ViewTxt.text = mystring!
+//        }else{
+//            ViewTxt.text = "Enter Any Value"
+//        }
         txtInput.delegate = self
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
