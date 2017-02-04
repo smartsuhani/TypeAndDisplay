@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         navController = UINavigationController()
         viewController1 = RootViewController()
-        
+        navController?.isNavigationBarHidden = true
         self.navController!.pushViewController(viewController1!, animated: true)
         
         self.window!.rootViewController = navController
