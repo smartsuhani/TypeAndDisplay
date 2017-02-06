@@ -22,7 +22,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         // Do any additional setup after loading the view.
         
         refresh = UIRefreshControl()
-        
+        print(self.nibName!)
         refresh.backgroundColor = UIColor.cyan
         table.addSubview(refresh)
         refresh.addTarget(self, action: #selector(self.reload1(_:)), for: UIControlEvents.valueChanged)
@@ -39,7 +39,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
             table.allowsMultipleSelection = false
         }
         //getfile()
-        
+        navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
     }
     

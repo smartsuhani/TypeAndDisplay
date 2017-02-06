@@ -5,34 +5,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navController: UINavigationController?
-    var viewController1: RootViewController?
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+//    var viewController1: RootViewController?
+    var viewController1: SecondViewController?
+    let splitVC = UISplitViewController()
+
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        self.window!.backgroundColor = UIColor.white
-//        let splitViewController =  UISplitViewController()
-//        let rootViewController = RootViewController()
-//        let detailViewController = DetailViewController()
-//        let rootNavigationController = UINavigationController(rootViewController:rootViewController)
-//        let detailNavigationController = UINavigationController(rootViewController:detailViewController)
-//        splitViewController.viewControllers = [rootNavigationController,detailNavigationController]
-//        self.window!.rootViewController = splitViewController
+//        navController = UINavigationController()
+////        viewController1 = RootViewController()
+//        viewController1 = SecondViewController()
+//        self.navController!.pushViewController(viewController1!, animated: true)
+//        
+//        self.window!.rootViewController = navController
 //        self.window!.makeKeyAndVisible()
+//        
 //        return true
-        
+//    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.navController?.isNavigationBarHidden = false
+        let firstVC = MasterViewController()
+        let secondVC = SecondryViewController()
+        splitVC.viewControllers = [firstVC, secondVC]
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        navController = UINavigationController()
-        viewController1 = RootViewController()
-        navController?.isNavigationBarHidden = true
-        self.navController!.pushViewController(viewController1!, animated: true)
-        
-        self.window!.rootViewController = navController
+        self.window!.rootViewController = splitVC
         self.window!.makeKeyAndVisible()
-        
         return true
     }
-
+    
+    func change(viewController: UIViewController){
+        self.splitVC.viewControllers.remove(at: 1)
+        self.splitVC.viewControllers.append(viewController)
+        splitVC.reloadInputViews()
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
