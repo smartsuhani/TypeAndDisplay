@@ -25,8 +25,16 @@ class EightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return data.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrollCell", for: indexPath) as! ScrollCell
         cell.lblTxt.text = data[indexPath.row]
+        
+       // cell.scroll.contentSize = CGSize(width: 600, height: 45)
+//        cell.view1.center = self.view.center
+//        cell.scroll.center = self.view.center
+        cell.view1.center = cell.scroll.center
+        cell.scroll.isScrollEnabled = true
+        cell.isUserInteractionEnabled = true
         return cell
     }
     

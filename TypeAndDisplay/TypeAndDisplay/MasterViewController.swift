@@ -4,7 +4,7 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     @IBOutlet var tableView: UITableView!
    // var secondryViewController = UIViewController()
-    var viewContollers: [UIViewController]! = [SecondViewController(),ThirdViewController(),FourthViewController(),SixViewController(),MapViewController()]
+    var viewContollers: [UIViewController]! = [SecondViewController(),ThirdViewController(),FourthViewController(),SixViewController(),MapViewController(),EightViewController()]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
