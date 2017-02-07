@@ -31,6 +31,8 @@
 		7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B33282E1E38884C00814C0C /* SecondViewController.xib */; };
 		7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B34AC371E3CC5950034DBFB /* photoViewCell.swift */; };
 		7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34AC381E3CC5950034DBFB /* photoViewCell.xib */; };
+		7B37E2F91E49DD7100B7638E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B37E2F71E49DD7100B7638E /* MapViewController.swift */; };
+		7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B37E2F81E49DD7100B7638E /* MapViewController.xib */; };
 		7B50641A1E45C1C600191D78 /* SixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5064181E45C1C600191D78 /* SixViewController.swift */; };
 		7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B5064191E45C1C600191D78 /* SixViewController.xib */; };
 		7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50641D1E45E8FD00191D78 /* RootViewController.swift */; };
@@ -92,6 +94,8 @@
 		7B33282E1E38884C00814C0C /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		7B34AC371E3CC5950034DBFB /* photoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoViewCell.swift; sourceTree = "<group>"; };
 		7B34AC381E3CC5950034DBFB /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
+		7B37E2F71E49DD7100B7638E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7B37E2F81E49DD7100B7638E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		7B5064181E45C1C600191D78 /* SixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixViewController.swift; sourceTree = "<group>"; };
 		7B5064191E45C1C600191D78 /* SixViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SixViewController.xib; sourceTree = "<group>"; };
 		7B50641D1E45E8FD00191D78 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				7B37E2F61E49DCFF00B7638E /* MapController */,
 				7B232C7B1E48971400844718 /* MasterDetail */,
 				7B232C321E48682400844718 /* ScrollViewTable */,
 				7B232C2F1E48372E00844718 /* PageView */,
@@ -227,6 +232,15 @@
 				7B3096631E4094FC00AC5FB3 /* FifthViewController.swift */,
 			);
 			name = TabBarViews;
+			sourceTree = "<group>";
+		};
+		7B37E2F61E49DCFF00B7638E /* MapController */ = {
+			isa = PBXGroup;
+			children = (
+				7B37E2F71E49DD7100B7638E /* MapViewController.swift */,
+				7B37E2F81E49DD7100B7638E /* MapViewController.xib */,
+			);
+			name = MapController;
 			sourceTree = "<group>";
 		};
 		7B5064171E45C17C00191D78 /* file */ = {
@@ -404,6 +418,7 @@
 				7B31A0E71E405B7400709EA4 /* 1.json in Resources */,
 				7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */,
 				7B2ABA931E23942500EFC05B /* Main.storyboard in Resources */,
+				7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */,
 				7B232C361E48687300844718 /* EightViewController.xib in Resources */,
 				7B31A0E51E40509C00709EA4 /* FourthViewController.xib in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
@@ -448,6 +463,7 @@
 				7B232C811E489A9B00844718 /* SecondryViewController.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,
+				7B37E2F91E49DD7100B7638E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

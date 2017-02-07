@@ -11,6 +11,12 @@ class SixViewController: UIViewController {
     
 
     
+    @IBAction func shareIt(_ sender: Any) {
+        let t1 = [fileURL]
+        let activity = UIActivityViewController(activityItems: t1, applicationActivities: nil)
+        activity.popoverPresentationController?.sourceView = self.view
+        self.present(activity, animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
