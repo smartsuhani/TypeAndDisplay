@@ -6,33 +6,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navController: UINavigationController?
 //    var viewController1: RootViewController?
-    var viewController1: SecondViewController?
+    var viewController1: EightViewController?
     let splitVC = UISplitViewController()
 
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        navController = UINavigationController()
-////        viewController1 = RootViewController()
-//        viewController1 = SecondViewController()
-//        self.navController!.pushViewController(viewController1!, animated: true)
-//        
-//        self.window!.rootViewController = navController
-//        self.window!.makeKeyAndVisible()
-//        
-//        return true
-//    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.navController?.isNavigationBarHidden = false
-        let firstVC = MasterViewController()
-        let secondVC = SecondryViewController()
-        splitVC.viewControllers = [firstVC, secondVC]
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.rootViewController = splitVC
+        navController = UINavigationController()
+//        viewController1 = RootViewController()
+        viewController1 = EightViewController()
+        self.navController!.pushViewController(viewController1!, animated: true)
+        
+        self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
+        
         return true
     }
+
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        self.navController?.isNavigationBarHidden = false
+//        let firstVC = MasterViewController()
+//        let secondVC = SecondryViewController()
+//        splitVC.viewControllers = [firstVC, secondVC]
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window!.rootViewController = splitVC
+//        self.window!.makeKeyAndVisible()
+//        return true
+//    }
     
     func change(viewController: UIViewController){
         self.splitVC.viewControllers.remove(at: 1)

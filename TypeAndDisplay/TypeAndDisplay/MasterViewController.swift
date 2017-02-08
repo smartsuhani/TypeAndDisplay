@@ -4,7 +4,7 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     @IBOutlet var tableView: UITableView!
    // var secondryViewController = UIViewController()
-    var viewContollers: [UIViewController]! = [SecondViewController(),ThirdViewController(),FourthViewController(),SixViewController()]
+    var viewContollers: [UIViewController]! = [SecondViewController(),ThirdViewController(),FourthViewController(),SixViewController(),MapViewController(),EightViewController()]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -30,7 +30,8 @@ class MasterViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let app = UIApplication.shared.delegate as! AppDelegate
+        let app = UIApplication.shared.delegate as! AppDelegate
         app.change(viewController: viewContollers[indexPath.row])
+
     }
 }
