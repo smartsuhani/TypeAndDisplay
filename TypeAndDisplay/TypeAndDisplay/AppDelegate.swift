@@ -6,7 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navController: UINavigationController?
 //    var viewController1: RootViewController?
-    var viewController1: SecondViewController?
+    var viewController1: NinthViewController?
     let splitVC = UISplitViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         navController = UINavigationController()
 //        viewController1 = RootViewController()
-        viewController1 = SecondViewController()
+        viewController1 = NinthViewController()
         self.navController!.pushViewController(viewController1!, animated: true)
         
         self.window!.rootViewController = navController

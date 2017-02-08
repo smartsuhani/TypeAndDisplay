@@ -33,6 +33,8 @@
 		7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34AC381E3CC5950034DBFB /* photoViewCell.xib */; };
 		7B37E2F91E49DD7100B7638E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B37E2F71E49DD7100B7638E /* MapViewController.swift */; };
 		7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B37E2F81E49DD7100B7638E /* MapViewController.xib */; };
+		7B486B9A1E4B430400DF7A46 /* NinthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B486B981E4B430400DF7A46 /* NinthViewController.swift */; };
+		7B486B9B1E4B430400DF7A46 /* NinthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B486B991E4B430400DF7A46 /* NinthViewController.xib */; };
 		7B50641A1E45C1C600191D78 /* SixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5064181E45C1C600191D78 /* SixViewController.swift */; };
 		7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B5064191E45C1C600191D78 /* SixViewController.xib */; };
 		7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50641D1E45E8FD00191D78 /* RootViewController.swift */; };
@@ -96,6 +98,8 @@
 		7B34AC381E3CC5950034DBFB /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
 		7B37E2F71E49DD7100B7638E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7B37E2F81E49DD7100B7638E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		7B486B981E4B430400DF7A46 /* NinthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthViewController.swift; sourceTree = "<group>"; };
+		7B486B991E4B430400DF7A46 /* NinthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NinthViewController.xib; sourceTree = "<group>"; };
 		7B5064181E45C1C600191D78 /* SixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixViewController.swift; sourceTree = "<group>"; };
 		7B5064191E45C1C600191D78 /* SixViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SixViewController.xib; sourceTree = "<group>"; };
 		7B50641D1E45E8FD00191D78 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +198,7 @@
 				7B50641C1E45E8A600191D78 /* splitview */,
 				7B5064171E45C17C00191D78 /* file */,
 				7B30965E1E40733F00AC5FB3 /* TabBarViews */,
-				7B781F0B1E3F5A1F00D42A68 /* Refresh Animation */,
+				7B781F0B1E3F5A1F00D42A68 /* Core Animation */,
 				7B781F061E3F301100D42A68 /* TableCells */,
 				7B781F051E3F2FC000D42A68 /* Views */,
 				7B2ABA8D1E23942500EFC05B /* AppDelegate.swift */,
@@ -288,11 +292,13 @@
 			name = TableCells;
 			sourceTree = "<group>";
 		};
-		7B781F0B1E3F5A1F00D42A68 /* Refresh Animation */ = {
+		7B781F0B1E3F5A1F00D42A68 /* Core Animation */ = {
 			isa = PBXGroup;
 			children = (
+				7B486B981E4B430400DF7A46 /* NinthViewController.swift */,
+				7B486B991E4B430400DF7A46 /* NinthViewController.xib */,
 			);
-			name = "Refresh Animation";
+			name = "Core Animation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +427,7 @@
 				7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */,
 				7B232C361E48687300844718 /* EightViewController.xib in Resources */,
 				7B31A0E51E40509C00709EA4 /* FourthViewController.xib in Resources */,
+				7B486B9B1E4B430400DF7A46 /* NinthViewController.xib in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
 				7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */,
 			);
@@ -451,6 +458,7 @@
 				7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */,
 				7B232C311E48375800844718 /* SeventhViewController.swift in Sources */,
 				7B50641A1E45C1C600191D78 /* SixViewController.swift in Sources */,
+				7B486B9A1E4B430400DF7A46 /* NinthViewController.swift in Sources */,
 				7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */,
 				7B232C7E1E48975A00844718 /* MasterViewController.swift in Sources */,
 				7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */,
