@@ -21,7 +21,6 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         refresh = UIRefreshControl()
         print(self.nibName!)
         refresh.backgroundColor = UIColor.cyan
@@ -175,13 +174,16 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         // set the text from the data model
         
+        
         cell.lblName.text = self.tablecelltext[indexPath.row]
         cell.lblSubtitle.text = "Name of Person"
         cell.imgView.image = UIImage(named: "Google")
         
         return cell
     }
-    
+    func tapped(){
+        print("tapped")
+    }
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
