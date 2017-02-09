@@ -9,18 +9,25 @@ class NinthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let frame1 = CGRect(x: 0,y: 0,width:50,height:50)
-        UIView.animate(withDuration: 0.8, animations: {
-            self.view1 = UIView(frame: frame1)
-            self.view1.center = self.view.center
-            self.view1.backgroundColor = UIColor.blue
-            self.view.addSubview(self.view1)
-        }, completion: nil)
+        self.view1 = UIView(frame: frame1)
+        self.view1.center = self.view.center
+        self.view1.alpha = 0
         let frame2 = CGRect(x:20,y:0,width:10,height:50)
         let view2 = UIView(frame: frame2)
         view2.backgroundColor = UIColor.white
+        
+        UIView.beginAnimations("boxAnimate", context: nil)
+        UIView.setAnimationDuration(4.0)
+        UIView.setAnimationCurve(UIViewAnimationCurve.easeInOut)
+        
+        self.view1.alpha = 2
+        self.view1.backgroundColor = UIColor.blue
+        self.view.addSubview(self.view1)
+        view2.backgroundColor = UIColor.red
+        UIView.commitAnimations()
+        
+        
         view1.addSubview(view2)
-        
-        
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?){
         let touch = touches.first! as UITouch

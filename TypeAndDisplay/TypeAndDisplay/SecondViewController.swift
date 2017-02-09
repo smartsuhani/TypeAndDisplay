@@ -16,10 +16,47 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     var tablecelltext: [String] = ["Google"]
     let cell = "cell"
     var selected: Int?
+    var view1: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view1 = UIView(frame: self.view.frame)
+        self.view.addSubview(view1)
+        let lbl = UILabel()
+        lbl.frame = CGRect(x:30,y:20,width:100,height:50)
+        lbl.text = "Welcome"
+        lbl.textColor = UIColor.black
+        view1.addSubview(lbl)
+        
+        
+        UIView.beginAnimations("op", context: nil)
+        UIView.setAnimationDuration(5)
+        UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
+            print(self.view.center)
+            lbl.center.x = self.view.center.x+lbl.frame.width/2
+            lbl.center.y = self.view.center.y+lbl.frame.height/2
+            let scale = CGAffineTransform(scaleX: 2, y: 2)
+            lbl.transform = scale
+            lbl.textColor = UIColor.blue
+
+        UIView.commitAnimations()
+        
+        UIView.beginAnimations("op1", context: nil)
+        UIView.setAnimationDelegate(self)
+        UIView.setAnimationDidStop(#selector(self.r))
+        UIView.setAnimationBeginsFromCurrentState(true)
+
+        UIView.setAnimationDuration(8)
+        UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
+                lbl.textColor = UIColor.red
+        lbl.textColor = UIColor.green
+        lbl.alpha = 0
+
+        UIView.commitAnimations()
+        
+        
+        
         // Do any additional setup after loading the view.
         refresh = UIRefreshControl()
         print(self.nibName!)
@@ -42,6 +79,12 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(FourthViewController.editButtonPressed))
     }
+    
+    func r(){
+        print("adloa")
+        self.view1.removeFromSuperview()
+    }
+
     
     func editButtonPressed(){
         table.setEditing(!table.isEditing, animated: true)

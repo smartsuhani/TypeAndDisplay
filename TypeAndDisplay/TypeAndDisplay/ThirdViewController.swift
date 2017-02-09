@@ -73,7 +73,13 @@ class ThirdViewController: UIViewController,UICollectionViewDelegateFlowLayout,U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.fetchResult.count
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ImageViewController()
+        let asset = fetchResult.object(at: indexPath.item)
+        let img = getImage(asset: asset)
+        vc.image = img
+        navigationController?.pushViewController(vc, animated: false)
+    }
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoViewCell", for: indexPath) as? photoViewCell
             else { fatalError("unexpected cell in collection view") }
@@ -96,7 +102,18 @@ class ThirdViewController: UIViewController,UICollectionViewDelegateFlowLayout,U
         })
         return thumbnail
     }
-
+    func getImage(asset: PHAsset) -> UIImage
+    {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        
+        return thumbnail
+    }
     // MARK: - Navigation
 
     fileprivate func resetCachedAssets() {

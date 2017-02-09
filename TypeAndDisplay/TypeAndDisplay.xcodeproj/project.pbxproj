@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */; };
+		7B10B7021E4C4686004672A1 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B10B7001E4C4686004672A1 /* ImageViewController.xib */; };
 		7B232C311E48375800844718 /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B232C301E48375800844718 /* SeventhViewController.swift */; };
 		7B232C351E48687300844718 /* EightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B232C331E48687300844718 /* EightViewController.swift */; };
 		7B232C361E48687300844718 /* EightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B232C341E48687300844718 /* EightViewController.xib */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		7B10B7001E4C4686004672A1 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		7B232C301E48375800844718 /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
 		7B232C331E48687300844718 /* EightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightViewController.swift; sourceTree = "<group>"; };
 		7B232C341E48687300844718 /* EightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EightViewController.xib; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 				7B34AC381E3CC5950034DBFB /* photoViewCell.xib */,
 				7B31A0E21E40509C00709EA4 /* FourthViewController.swift */,
 				7B31A0E31E40509C00709EA4 /* FourthViewController.xib */,
+				7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */,
+				7B10B7001E4C4686004672A1 /* ImageViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */,
 				7B232C851E48A65F00844718 /* SecondryViewController.xib in Resources */,
 				7B232C3A1E48754E00844718 /* ScrollCell.xib in Resources */,
+				7B10B7021E4C4686004672A1 /* ImageViewController.xib in Resources */,
 				7B31A0E71E405B7400709EA4 /* 1.json in Resources */,
 				7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */,
 				7B2ABA931E23942500EFC05B /* Main.storyboard in Resources */,
@@ -470,6 +477,7 @@
 				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
 				7B232C811E489A9B00844718 /* SecondryViewController.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
+				7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,
 				7B37E2F91E49DD7100B7638E /* MapViewController.swift in Sources */,
 			);

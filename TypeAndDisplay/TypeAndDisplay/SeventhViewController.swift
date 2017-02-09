@@ -3,7 +3,8 @@ import UIKit
 class SeventhViewController: UIPageViewController,UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var index = 0
-    var identifiers: NSArray = ["SecondViewController", "ThirdViewController"]
+    var identifiers: [String] = ["SecondViewController", "ThirdViewController"]
+    var controllers = [SecondViewController(),ThirdViewController()]
     override func viewDidLoad() {
         
         self.dataSource = self
@@ -20,20 +21,15 @@ class SeventhViewController: UIPageViewController,UIPageViewControllerDataSource
     func viewControllerAtIndex(index: Int) -> UIViewController! {
         
         //first view controller = firstViewControllers navigation controller
-        if index == 0 {
-            
+        if index > self.identifiers.count - 1 || index < 0{
+            return nil
         }
+        return controllers[index]
         
-        //second view controller = secondViewController's navigation controller
-        if index == 1 {
-            
-        }
-        
-        return nil
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        let identifier = viewController.restorationIdentifier
+        let identifier = viewController.nibName
         let index = self.identifiers.index(of: identifier!)
         
         //if the index is the end of the array, return nil since we dont want a view controller after the last one
@@ -50,7 +46,7 @@ class SeventhViewController: UIPageViewController,UIPageViewControllerDataSource
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        let identifier = viewController.restorationIdentifier
+        let identifier = viewController.nibName
         let index = self.identifiers.index(of: identifier!)
         
         //if the index is 0, return nil since we dont want a view controller before the first one
