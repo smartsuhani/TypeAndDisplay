@@ -1,9 +1,10 @@
 import UIKit
 
-class SecondViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class SecondViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
 
     //MARK: UIObject
     @IBOutlet var btn1: UIButton!
+    @IBOutlet var txtInput2: UITextField!
     @IBOutlet var txtInput1: UITextField!
     @IBOutlet var table: UITableView!
     @IBOutlet var addBtn: UIButton!
@@ -17,10 +18,14 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     let cell = "cell"
     var selected: Int?
     var view1: UIView!
-    
+    var picker1: [String] = ["1","2","3","4","5"]
+    var picker2: [String] = ["A","B","C","D","E"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        txtInput2.inputView = pickerView
         view1 = UIView(frame: self.view.frame)
         self.view.addSubview(view1)
         let lbl = UILabel()
@@ -268,5 +273,26 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         } else {
                 print("File Not Found")
         }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(component == 0){
+            return picker1.count
+        }else{
+            return picker2.count
+        }
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(component == 0){
+            return picker1[row]
+        }else{
+            return picker2[row]
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+      txtInput2.text = "\(picker1[pickerView.selectedRow(inComponent: 0)])/\(picker2[pickerView.selectedRow(inComponent: 1)])"
     }
 }
