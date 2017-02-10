@@ -139,6 +139,15 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @IBAction func deleteCell(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Confirm Delete", message: "Your Image", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "no", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "yes", style: UIAlertActionStyle.destructive, handler: { (UIAlertAction) in
+            self.del()
+        }))
+        self.present(alert, animated: true)
+    }
+    
+    func del(){
         if(tablecelltext.count != 0){
             if txtInput1.text != "" && ((table.indexPathsForSelectedRows)?.count ?? 0) < 2 {
                 if(tablecelltext.contains(txtInput1.text!)){
@@ -153,21 +162,21 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
                 }
             }else{
                 if let indexPaths = table.indexPathsForSelectedRows  {
-                
-                    let sortedArray = indexPaths.sorted {$0.row < $1.row}
-                
-                    for i in (0...sortedArray.count-1).reversed() {
                     
+                    let sortedArray = indexPaths.sorted {$0.row < $1.row}
+                    
+                    for i in (0...sortedArray.count-1).reversed() {
+                        
                         tablecelltext.remove(at: sortedArray[i].row)
                     }
                     table.deleteRows(at: sortedArray, with: .automatic)
-                
+                    
                 }
             }
         }else{
             print("table ma kai nathi")
         }
-        //table.reloadData()
+        table.reloadData()
     }
     
     @IBAction func changeOption(_ sender: UISwitch) {

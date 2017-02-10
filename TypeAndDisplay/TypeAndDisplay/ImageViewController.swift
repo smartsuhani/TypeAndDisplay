@@ -31,6 +31,13 @@ class ImageViewController: UIViewController,UIScrollViewDelegate {
         scroll.zoomScale = 1.0
         
         scroll.addSubview(img)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handle))
+        tap.numberOfTapsRequired = 2
+        scroll.addGestureRecognizer(tap)
+        
+        
+    
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
@@ -38,5 +45,12 @@ class ImageViewController: UIViewController,UIScrollViewDelegate {
     }
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return img
+    }
+    func handle() {
+        if(scroll.zoomScale < scroll.maximumZoomScale){
+            scroll.setZoomScale(scroll.maximumZoomScale, animated: true)
+        }else{
+            scroll.setZoomScale(scroll.minimumZoomScale, animated: true)
+        }
     }
 }
