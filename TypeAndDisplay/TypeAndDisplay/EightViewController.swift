@@ -3,6 +3,7 @@ import UIKit
 class EightViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
+    
     var data = ["one","two","three","four","five"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,7 +11,7 @@ class EightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ScrollCell",bundle: nil), forCellReuseIdentifier: "ScrollCell")
         
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -28,14 +29,13 @@ class EightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScrollCell", for: indexPath) as! ScrollCell
         cell.lblTxt.text = data[indexPath.row]
-        
-       // cell.scroll.contentSize = CGSize(width: 600, height: 45)
-//        cell.view1.center = self.view.center
-//        cell.scroll.center = self.view.center
         cell.view1.center = cell.scroll.center
         cell.scroll.isScrollEnabled = true
         cell.isUserInteractionEnabled = true
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
     @IBAction func goToRoot(_ sender: Any) {
@@ -47,5 +47,21 @@ class EightViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if let nav = self.navigationController{
             nav.popViewController(animated: true)
         }
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete", handler: { (action, indexPath) in
+            tableView.reloadData()
+            print("delete Tapped")
+        })
+        deleteAction.backgroundColor = UIColor.red
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: { (action, indexPath) in
+            print("Edit tapped")
+            
+        })
+        editAction.backgroundColor = UIColor.blue
+        return [editAction,deleteAction]
     }
 }

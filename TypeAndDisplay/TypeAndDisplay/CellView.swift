@@ -1,58 +1,60 @@
-//
-//  CellView.swift
-//  TypeAndDisplay
-//
-//  Created by Devloper30 on 30/01/17.
-//  Copyright © 2017 lanetteamLanet. All rights reserved.
-//
-
 import UIKit
 
-class CellView: UITableViewCell/*,UIScrollViewDelegate*/{
-
-    //var Scroll: UIScrollView!
+class CellView: UITableViewCell{
 
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var lblName: UILabel!
     @IBOutlet var lblSubtitle: UILabel!
+    var rightBtn = UIButton()
+    var leftBtn = UIButton()
     override func awakeFromNib() {
         super.awakeFromNib()
-      //  self.Scroll.delegate = self
-//        let frame = View1.frame
-//        self.frame.origin = frame.origin
         
-        
-        
-        // Initialization code
-//        let leftSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CellView.swipe(sender:)))
-//        leftSwipe.direction = .right;
-//        self.addGestureRecognizer(leftSwipe)
-//        let rightSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CellView.swipe(sender:)))
-//        leftSwipe.direction = .left;
-//        self.addGestureRecognizer(rightSwipe)
-        
+//         Initialization code
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CellView.swipe(sender:)))
+        leftSwipe.direction = .right;
+        self.addGestureRecognizer(leftSwipe)
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CellView.swipe(sender:)))
+        leftSwipe.direction = .left;
+        self.addGestureRecognizer(rightSwipe)
+
         
     }
+    
+    func swipe(sender:AnyObject)
+    {
+        let swipeGesture:UISwipeGestureRecognizer = sender as! UISwipeGestureRecognizer
+        self.rightBtn.alpha = 0
+        if(swipeGesture.direction == .right)
+        {
+            self.rightBtn = UIButton(frame: CGRect(x: -70,y: 0,width: 70,height:50))
+            self.rightBtn.layer.cornerRadius = 5
+            UIView.animate(withDuration: 0.8, animations: {
+                
+                self.imgView.frame = CGRect(x: 70,y: 0,width: self.imgView.frame.width,height: self.imgView.frame.height)
+                self.lblName.frame = CGRect(x: self.imgView.frame.width + 80,y: 8,width: self.lblName.frame.width,height: self.lblName.frame.height)
+                self.lblSubtitle.frame = CGRect(x: self.imgView.frame.width + 80,y: 26,width: self.lblSubtitle.frame.width,height: self.lblSubtitle.frame.height)
+                self.rightBtn.frame = CGRect(x: 0,y: 0,width:70,height:50)
+                self.rightBtn.backgroundColor = UIColor.cyan
+                self.rightBtn.setTitle("Right", for: .normal)
+                self.rightBtn.setTitleColor(UIColor.darkGray, for: .normal)
+                self.rightBtn.alpha = 1
+                self.contentView.addSubview(self.rightBtn)
+            }, completion: { (bool) in
+        self.rightBtn.addTarget(SecondViewController(), action: #selector(SecondViewController.tapped), for: .touchDown)
+            })
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+            print("swipe right")
+        }else if(swipeGesture.direction == .left){
+            UIView.animate(withDuration: 0.8, animations: {
+                
+                self.imgView.frame = CGRect(x: 15,y: 0,width: self.imgView.frame.width,height: self.imgView.frame.height)
+                self.lblName.frame = CGRect(x: 71,y: 8,width: self.lblName.frame.width,height: self.lblName.frame.height)
+                self.lblSubtitle.frame = CGRect(x: 71,y: 26,width: self.lblSubtitle.frame.width,height: self.lblSubtitle.frame.height)
+                self.rightBtn.frame = CGRect(x: -70,y: 0,width: 70,height:50)
+            }, completion: nil)
+            
+            print("swipe left")
+        }
     }
-//    func swipe(sender:AnyObject)
-//    {
-//        let swipeGesture:UISwipeGestureRecognizer = sender as! UISwipeGestureRecognizer
-//        if(swipeGesture.direction == .right)
-//        {
-//            var frame:CGRect = self.frame
-//            frame.origin.x = +self.Btnleft.frame.width
-//            self.frame = frame
-//            print("swipe right")
-//        }else if(swipeGesture.direction == .left){
-//            var frame:CGRect = self.frame;
-//            frame.origin.x = -self.Btnleft.frame.width;
-//            self.frame = frame;
-//            print("swipe left")
-//        }
-//    }
 }
