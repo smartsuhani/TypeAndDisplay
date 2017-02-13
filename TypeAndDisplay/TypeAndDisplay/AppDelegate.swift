@@ -6,17 +6,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navController: UINavigationController?
-//    var viewController1: RootViewController?
-    var viewController1: RegisterViewController?
+//    var viewController1: RootViewController()
+    var viewController1 = RegisterViewController()
     let splitVC = UISplitViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         navController = UINavigationController()
-//        viewController1 = RootViewController()
-        viewController1 = RegisterViewController()
-        self.navController!.pushViewController(viewController1!, animated: true)
+
+        self.navController!.pushViewController(viewController1, animated: true)
         
         self.window!.rootViewController = navController
         self.window!.makeKeyAndVisible()
@@ -60,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        do {
+            try DataController().managedObjectContext.save()
+        } catch {
+            fatalError("stuff happened")
+        }
     }
 }
 
