@@ -8,12 +8,14 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet var txtName: UITextField!
     @IBOutlet var txtUsername: UITextField!
 
+    @IBOutlet var BtnUpdate: UIButton!
     @IBOutlet var table: UITableView!
     @IBOutlet var BtnAdd: UIButton!
     let moc = DataController()
     var fetchedPerson: [User] = []
     var filteredArray = [User]()
     var shouldShowSearchResults = false
+    var updatePath: IndexPath!
     
     var searchController: UISearchController!
     
@@ -44,7 +46,7 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         table.register(UINib(nibName: "CellView", bundle: nil), forCellReuseIdentifier: "CellView")
         fetch()
         
-        
+        BtnUpdate.isHidden = true
 
     }
     
@@ -150,9 +152,32 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
             self.fetch()
         }
         delete.backgroundColor = UIColor.red
-        return [delete]
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            print("edit tapped")
+            self.txtName.text = self.fetchedPerson[indexPath.row].name
+            self.txtUsername.text = self.fetchedPerson[indexPath.row].username
+            self.txtPassword.text = self.fetchedPerson[indexPath.row].password
+            
+            self.BtnAdd.isHidden = true
+            self.updatePath = indexPath
+            self.BtnUpdate.isHidden = false
+        }
+        edit.backgroundColor = UIColor.green
+        return [delete,edit]
     }
     
+    @IBAction func updateData(_ sender: Any) {
+        fetchedPerson[updatePath.row].name = txtName.text!
+        fetchedPerson[updatePath.row].username = txtUsername.text!
+        fetchedPerson[updatePath.row].password = txtPassword.text!
+        
+        do{
+            try moc.managedObjectContext.s
+        }catch{
+        
+        }
+    }
     func updateSearchResults(for searchController: UISearchController) {
         filteredArray.removeAll(keepingCapacity: false)
         let array: NSArray = self.usersFromCoreData as NSArray
