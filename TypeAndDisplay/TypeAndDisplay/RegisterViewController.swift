@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating {
 
     @IBOutlet var txtPassword: UITextField!
     @IBOutlet var lblTitle: UILabel!
@@ -10,14 +10,54 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     @IBOutlet var table: UITableView!
     @IBOutlet var BtnAdd: UIButton!
+    let moc = DataController()
     var fetchedPerson: [User] = []
+    var filteredArray = [User]()
+    var shouldShowSearchResults = false
+    
+    var searchController: UISearchController!
+    
+    var usersFromCoreData: [NSManagedObject] {
+        get {
+            
+            var resultArray:Array<NSManagedObject>!
+            let managedContext = moc.managedObjectContext
+            let fetchRequest =
+                NSFetchRequest<NSManagedObject>(entityName: "User")
+            
+            do {
+                resultArray = try managedContext.fetch(fetchRequest)
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+            
+            return resultArray
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetch()
+        configureSearchController()
+        
         table.delegate = self
         table.dataSource = self
         table.register(UINib(nibName: "CellView", bundle: nil), forCellReuseIdentifier: "CellView")
+        fetch()
+        
+        
 
+    }
+    
+    func configureSearchController() {
+        // Initialize and perform a minimum configuration to the search controller.
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search here..."
+        searchController.searchBar.sizeToFit()
+        
+        // Place the search bar view to the tableview headerview.
+        table.tableHeaderView = searchController.searchBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,17 +89,29 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "CellView", for: indexPath) as! CellView
-        cell.imgView.image = UIImage(named: "Google")
-        cell.lblName.text = fetchedPerson[indexPath.row].name
-        cell.lblSubtitle.text = fetchedPerson[indexPath.row].username
+        
+        if (self.searchController.isActive) {
+            cell.imgView.image = UIImage(named: "Google")
+            cell.lblName.text = filteredArray[indexPath.row].name
+            cell.lblSubtitle.text = filteredArray[indexPath.row].password
+        }else{
+            cell.imgView.image = UIImage(named: "Google")
+            cell.lblName.text = fetchedPerson[indexPath.row].name
+            cell.lblSubtitle.text = fetchedPerson[indexPath.row].password
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedPerson.count
+        if (self.searchController.isActive) {
+            return filteredArray.count
+        }else{
+            return fetchedPerson.count
+        }
+        
     }
     
     func Saveperson(){
-        let data = DataController().managedObjectContext
+        let data = moc.managedObjectContext
         let entity = NSEntityDescription.insertNewObject(forEntityName: "User", into: data) as! User
         
         entity.setValue(txtName.text!, forKey: "name")
@@ -72,24 +124,43 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-        fetch()
     }
     
     @IBAction func saveUser(_ sender: Any) {
         Saveperson()
     }
+
     func fetch() {
-        let moc = DataController().managedObjectContext
-        let personFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
-        do {
-            fetchedPerson = try moc.fetch(personFetch) as! [User]
-            print(fetchedPerson)
-            
-        } catch {
-            fatalError("Failed to fetch User: \(error)")
-        }
+        fetchedPerson = self.usersFromCoreData as! [User]
         table.reloadData()
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .normal, title: "delete") { (action, indexPath) in
+            print("delete tapped")
+            let ob = self.usersFromCoreData[indexPath.row] as! User
+            print(ob.name!)
+            self.moc.managedObjectContext.delete(ob)
+            
+            self.fetchedPerson.remove(at: indexPath.row)
+            do{
+                try self.moc.managedObjectContext.save()
+            }catch{
+            
+            }
+            self.fetch()
+        }
+        delete.backgroundColor = UIColor.red
+        return [delete]
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredArray.removeAll(keepingCapacity: false)
+        let array: NSArray = self.usersFromCoreData as NSArray
+        let predicate = NSPredicate(format: "name contains[c] %@ OR password contains[c] %@ OR username contains[c] %@",searchController.searchBar.text!,searchController.searchBar.text!,searchController.searchBar.text!)
+        
+        filteredArray = array.filtered(using: predicate) as! [User]
+        print(filteredArray)
+        self.table.reloadData()
     }
     
 }
