@@ -20,24 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZd-rk-lEe">
-                    <rect key="frame" x="23" y="52" width="32" height="67"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <state key="normal" title="Root"/>
-                    <connections>
-                        <action selector="goToRoot:" destination="-1" eventType="touchDown" id="4rZ-CS-hGs"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lF-oZ-nfC">
-                    <rect key="frame" x="319" y="52" width="34" height="67"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <state key="normal" title="Back"/>
-                    <connections>
-                        <action selector="goBack:" destination="-1" eventType="touchDown" id="gWj-Cf-VQU"/>
-                    </connections>
-                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rgE-Y7-AIL">
-                    <rect key="frame" x="62" y="189" width="250" height="458"/>
+                    <rect key="frame" x="16" y="74" width="343" height="573"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
