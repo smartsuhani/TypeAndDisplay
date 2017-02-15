@@ -35,6 +35,8 @@
 		7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B34AC381E3CC5950034DBFB /* photoViewCell.xib */; };
 		7B37E2F91E49DD7100B7638E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B37E2F71E49DD7100B7638E /* MapViewController.swift */; };
 		7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B37E2F81E49DD7100B7638E /* MapViewController.xib */; };
+		7B38DAFE1E52D78B0006D478 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38DAFC1E52D78B0006D478 /* WebViewController.swift */; };
+		7B38DAFF1E52D78B0006D478 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B38DAFD1E52D78B0006D478 /* WebViewController.xib */; };
 		7B40D11C1E519F0E00824082 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B40D11A1E519F0E00824082 /* User+CoreDataClass.swift */; };
 		7B40D11D1E519F0E00824082 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B40D11B1E519F0E00824082 /* User+CoreDataProperties.swift */; };
 		7B486B9A1E4B430400DF7A46 /* NinthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B486B981E4B430400DF7A46 /* NinthViewController.swift */; };
@@ -108,6 +110,8 @@
 		7B34AC381E3CC5950034DBFB /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
 		7B37E2F71E49DD7100B7638E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7B37E2F81E49DD7100B7638E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		7B38DAFC1E52D78B0006D478 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		7B38DAFD1E52D78B0006D478 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		7B40D11A1E519F0E00824082 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7B40D11B1E519F0E00824082 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B486B981E4B430400DF7A46 /* NinthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				7B38DAFB1E52D7610006D478 /* web */,
 				7B4D2B781E4DBE390037A360 /* Authentication */,
 				7B37E2F61E49DCFF00B7638E /* MapController */,
 				7B232C7B1E48971400844718 /* MasterDetail */,
@@ -268,6 +273,15 @@
 				7B37E2F81E49DD7100B7638E /* MapViewController.xib */,
 			);
 			name = MapController;
+			sourceTree = "<group>";
+		};
+		7B38DAFB1E52D7610006D478 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				7B38DAFC1E52D78B0006D478 /* WebViewController.swift */,
+				7B38DAFD1E52D78B0006D478 /* WebViewController.xib */,
+			);
+			name = web;
 			sourceTree = "<group>";
 		};
 		7B4D2B781E4DBE390037A360 /* Authentication */ = {
@@ -472,6 +486,7 @@
 				7B232C361E48687300844718 /* EightViewController.xib in Resources */,
 				7B31A0E51E40509C00709EA4 /* FourthViewController.xib in Resources */,
 				7B486B9B1E4B430400DF7A46 /* NinthViewController.xib in Resources */,
+				7B38DAFF1E52D78B0006D478 /* WebViewController.xib in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
 				7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */,
 			);
@@ -511,6 +526,7 @@
 				7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */,
 				7B4D2B8C1E4DC7AB0037A360 /* Model.xcdatamodeld in Sources */,
 				7B232C351E48687300844718 /* EightViewController.swift in Sources */,
+				7B38DAFE1E52D78B0006D478 /* WebViewController.swift in Sources */,
 				7B781F091E3F306300D42A68 /* CellView.swift in Sources */,
 				7B232C391E48754E00844718 /* ScrollCell.swift in Sources */,
 				7B4D2B831E4DBF430037A360 /* RegisterViewController.swift in Sources */,

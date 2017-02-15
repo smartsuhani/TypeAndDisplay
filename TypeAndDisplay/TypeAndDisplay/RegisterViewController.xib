@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="TypeAndDisplay" customModuleProvider="target">
             <connections>
                 <outlet property="BtnAdd" destination="fFH-O1-GH5" id="tdi-9M-zAU"/>
+                <outlet property="BtnUpdate" destination="hf6-ri-DKx" id="dM2-J3-Zkf"/>
                 <outlet property="lblTitle" destination="cfS-kN-M7a" id="4na-Fb-6Tq"/>
                 <outlet property="table" destination="VJy-8H-R0J" id="DNt-wK-JKv"/>
                 <outlet property="txtName" destination="dFl-nt-KbH" id="t2d-jO-Obn"/>
@@ -70,6 +71,14 @@
                     <state key="normal" title="Add to Core Data"/>
                     <connections>
                         <action selector="saveUser:" destination="-1" eventType="touchDown" id="ahW-bP-Xgt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf6-ri-DKx">
+                    <rect key="frame" x="118" y="299" width="139" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Update"/>
+                    <connections>
+                        <action selector="updateData:" destination="-1" eventType="touchDown" id="iU9-Bs-d2L"/>
                     </connections>
                 </button>
             </subviews>

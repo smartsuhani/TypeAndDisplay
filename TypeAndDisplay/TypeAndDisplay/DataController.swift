@@ -3,7 +3,24 @@ import CoreData
 
 class DataController: NSObject{
     var managedObjectContext: NSManagedObjectContext
-
+    var usersFromCoreData: [NSManagedObject] {
+        get {
+            
+            var resultArray:Array<NSManagedObject>!
+            let managedContext = self.managedObjectContext
+            let fetchRequest =
+                NSFetchRequest<NSManagedObject>(entityName: "User")
+            
+            do {
+                resultArray = try managedContext.fetch(fetchRequest)
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+            
+            return resultArray
+        }
+    }
+    
     override  init() {
         guard let modelURL = Bundle.main.url(forResource:
             "Model", withExtension:"momd") else {
@@ -28,5 +45,26 @@ class DataController: NSObject{
         }
         
     }
+    func deleteObject(obj: NSManagedObject, complition:(_ result: Bool)->Void){
+        
+        self.managedObjectContext.delete(obj)
+        
+        do{
+            try self.managedObjectContext.save()
+            complition(true)
+        }catch{
+            complition(false)
+        }
+    }
+    
+    func updateObject(complition:(_ result: Bool)->Void){
+        do{
+            try self.managedObjectContext.save()
+            complition(true)
+        }catch{
+            complition(false)
+        }
+    }
+    
 }
 

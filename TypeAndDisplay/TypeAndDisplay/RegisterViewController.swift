@@ -8,32 +8,16 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet var txtName: UITextField!
     @IBOutlet var txtUsername: UITextField!
 
+    @IBOutlet var BtnUpdate: UIButton!
     @IBOutlet var table: UITableView!
     @IBOutlet var BtnAdd: UIButton!
     let moc = DataController()
     var fetchedPerson: [User] = []
     var filteredArray = [User]()
     var shouldShowSearchResults = false
+    var updatePath: IndexPath!
     
     var searchController: UISearchController!
-    
-    var usersFromCoreData: [NSManagedObject] {
-        get {
-            
-            var resultArray:Array<NSManagedObject>!
-            let managedContext = moc.managedObjectContext
-            let fetchRequest =
-                NSFetchRequest<NSManagedObject>(entityName: "User")
-            
-            do {
-                resultArray = try managedContext.fetch(fetchRequest)
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-            
-            return resultArray
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +28,7 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         table.register(UINib(nibName: "CellView", bundle: nil), forCellReuseIdentifier: "CellView")
         fetch()
         
-        
+        BtnUpdate.isHidden = true
 
     }
     
@@ -131,31 +115,55 @@ class RegisterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
 
     func fetch() {
-        fetchedPerson = self.usersFromCoreData as! [User]
+        fetchedPerson = moc.usersFromCoreData as! [User]
         table.reloadData()
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .normal, title: "delete") { (action, indexPath) in
             print("delete tapped")
-            let ob = self.usersFromCoreData[indexPath.row] as! User
+            let ob = self.moc.usersFromCoreData[indexPath.row] as! User
             print(ob.name!)
-            self.moc.managedObjectContext.delete(ob)
-            
-            self.fetchedPerson.remove(at: indexPath.row)
-            do{
-                try self.moc.managedObjectContext.save()
-            }catch{
-            
-            }
-            self.fetch()
+            self.moc.deleteObject(obj: ob, complition: { (success) in
+                if(success){
+                    print("deleted")
+                    self.fetch()
+                }
+            })
         }
         delete.backgroundColor = UIColor.red
-        return [delete]
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            print("edit tapped")
+            self.txtName.text = self.fetchedPerson[indexPath.row].name
+            self.txtUsername.text = self.fetchedPerson[indexPath.row].username
+            self.txtPassword.text = self.fetchedPerson[indexPath.row].password
+            
+            self.BtnAdd.isHidden = true
+            self.updatePath = indexPath
+            self.BtnUpdate.isHidden = false
+        }
+        edit.backgroundColor = UIColor.green
+        return [delete,edit]
     }
     
+    @IBAction func updateData(_ sender: Any) {
+        let up: NSManagedObject! = moc.usersFromCoreData[updatePath.row]
+        
+        
+        (up as! User).name = txtName.text!
+        (up as! User).username = txtUsername.text!
+        (up as! User).password = txtPassword.text!
+        
+        moc.updateObject { (success) in
+            if(success){
+                print("updated")
+                self.fetch()
+            }
+        }
+    }
     func updateSearchResults(for searchController: UISearchController) {
         filteredArray.removeAll(keepingCapacity: false)
-        let array: NSArray = self.usersFromCoreData as NSArray
+        let array: NSArray = moc.usersFromCoreData as NSArray
         let predicate = NSPredicate(format: "name contains[c] %@ OR password contains[c] %@ OR username contains[c] %@",searchController.searchBar.text!,searchController.searchBar.text!,searchController.searchBar.text!)
         
         filteredArray = array.filtered(using: predicate) as! [User]
