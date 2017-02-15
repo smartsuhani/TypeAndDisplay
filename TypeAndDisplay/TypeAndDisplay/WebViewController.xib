@@ -45,7 +45,7 @@
                                                 <action selector="reload" destination="8Ty-8P-jx4" id="DRh-hO-86S"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem style="plain" id="iqw-XH-h56">
+                                        <barButtonItem style="done" id="iqw-XH-h56">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gtE-h3-uR2" userLabel="&lt;">
                                                 <rect key="frame" x="49" y="7" width="40" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -72,12 +72,11 @@
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </leftBarButtonItems>
-                                    <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="iE4-Sg-JCC">
-                                        <rect key="frame" x="143" y="7" width="93" height="30"/>
+                                    <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" id="iE4-Sg-JCC">
+                                        <rect key="frame" x="144" y="7" width="92" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <rightBarButtonItems>
@@ -87,7 +86,7 @@
                                                 <action selector="stopLoading" destination="8Ty-8P-jx4" id="hNW-4D-C6y"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem style="plain" id="FEf-b6-x4O">
+                                        <barButtonItem style="done" id="FEf-b6-x4O">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LQQ-FB-2Kv">
                                                 <rect key="frame" x="287" y="7" width="40" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
