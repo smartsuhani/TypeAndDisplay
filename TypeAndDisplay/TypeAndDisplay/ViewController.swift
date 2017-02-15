@@ -21,6 +21,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         }
         txtInput.delegate = self
         
+        imgView.image = UIImage()
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
     }
