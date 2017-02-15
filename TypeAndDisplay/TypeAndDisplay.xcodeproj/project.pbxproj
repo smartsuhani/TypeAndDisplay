@@ -16,8 +16,6 @@
 		7B232C3A1E48754E00844718 /* ScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B232C381E48754E00844718 /* ScrollCell.xib */; };
 		7B232C7E1E48975A00844718 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B232C7C1E48975A00844718 /* MasterViewController.swift */; };
 		7B232C7F1E48975A00844718 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B232C7D1E48975A00844718 /* MasterViewController.xib */; };
-		7B232C811E489A9B00844718 /* SecondryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B232C801E489A9B00844718 /* SecondryViewController.swift */; };
-		7B232C851E48A65F00844718 /* SecondryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B232C841E48A65F00844718 /* SecondryViewController.xib */; };
 		7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2ABA8D1E23942500EFC05B /* AppDelegate.swift */; };
 		7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2ABA8F1E23942500EFC05B /* ViewController.swift */; };
 		7B2ABA931E23942500EFC05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2ABA911E23942500EFC05B /* Main.storyboard */; settings = {ASSET_TAGS = (txt1, ); }; };
@@ -49,8 +47,6 @@
 		7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B5064191E45C1C600191D78 /* SixViewController.xib */; };
 		7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50641D1E45E8FD00191D78 /* RootViewController.swift */; };
 		7B5064201E45E8FD00191D78 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B50641E1E45E8FD00191D78 /* RootViewController.xib */; };
-		7B5064231E45E91200191D78 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5064211E45E91200191D78 /* DetailViewController.swift */; };
-		7B5064241E45E91200191D78 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B5064221E45E91200191D78 /* DetailViewController.xib */; };
 		7B781F091E3F306300D42A68 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B781F071E3F306300D42A68 /* CellView.swift */; };
 		7B781F0A1E3F306300D42A68 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B781F081E3F306300D42A68 /* CellView.xib */; };
 		7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B781F0C1E3F67B600D42A68 /* 1.txt */; };
@@ -85,8 +81,6 @@
 		7B232C381E48754E00844718 /* ScrollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollCell.xib; sourceTree = "<group>"; };
 		7B232C7C1E48975A00844718 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		7B232C7D1E48975A00844718 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
-		7B232C801E489A9B00844718 /* SecondryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondryViewController.swift; sourceTree = "<group>"; };
-		7B232C841E48A65F00844718 /* SecondryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondryViewController.xib; sourceTree = "<group>"; };
 		7B2ABA8A1E23942500EFC05B /* TypeAndDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypeAndDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2ABA8D1E23942500EFC05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B2ABA8F1E23942500EFC05B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +119,6 @@
 		7B5064191E45C1C600191D78 /* SixViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SixViewController.xib; sourceTree = "<group>"; };
 		7B50641D1E45E8FD00191D78 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7B50641E1E45E8FD00191D78 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		7B5064211E45E91200191D78 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		7B5064221E45E91200191D78 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		7B781F071E3F306300D42A68 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		7B781F081E3F306300D42A68 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		7B781F0C1E3F67B600D42A68 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
@@ -183,8 +175,6 @@
 			children = (
 				7B232C7C1E48975A00844718 /* MasterViewController.swift */,
 				7B232C7D1E48975A00844718 /* MasterViewController.xib */,
-				7B232C801E489A9B00844718 /* SecondryViewController.swift */,
-				7B232C841E48A65F00844718 /* SecondryViewController.xib */,
 			);
 			name = MasterDetail;
 			sourceTree = "<group>";
@@ -316,8 +306,6 @@
 			children = (
 				7B50641D1E45E8FD00191D78 /* RootViewController.swift */,
 				7B50641E1E45E8FD00191D78 /* RootViewController.xib */,
-				7B5064211E45E91200191D78 /* DetailViewController.swift */,
-				7B5064221E45E91200191D78 /* DetailViewController.xib */,
 			);
 			name = splitview;
 			sourceTree = "<group>";
@@ -468,7 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2ABA981E23942500EFC05B /* LaunchScreen.storyboard in Resources */,
-				7B5064241E45E91200191D78 /* DetailViewController.xib in Resources */,
 				7B4D2B841E4DBF430037A360 /* RegisterViewController.xib in Resources */,
 				7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */,
 				7B5064201E45E8FD00191D78 /* RootViewController.xib in Resources */,
@@ -476,7 +463,6 @@
 				7B2ABA951E23942500EFC05B /* Assets.xcassets in Resources */,
 				7B781F0A1E3F306300D42A68 /* CellView.xib in Resources */,
 				7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */,
-				7B232C851E48A65F00844718 /* SecondryViewController.xib in Resources */,
 				7B232C3A1E48754E00844718 /* ScrollCell.xib in Resources */,
 				7B10B7021E4C4686004672A1 /* ImageViewController.xib in Resources */,
 				7B31A0E71E405B7400709EA4 /* 1.json in Resources */,
@@ -513,7 +499,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5064231E45E91200191D78 /* DetailViewController.swift in Sources */,
 				7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */,
 				7B40D11D1E519F0E00824082 /* User+CoreDataProperties.swift in Sources */,
 				7B232C311E48375800844718 /* SeventhViewController.swift in Sources */,
@@ -533,7 +518,6 @@
 				7B31A0E41E40509C00709EA4 /* FourthViewController.swift in Sources */,
 				7B3096641E4094FC00AC5FB3 /* FifthViewController.swift in Sources */,
 				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
-				7B232C811E489A9B00844718 /* SecondryViewController.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
 				7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,

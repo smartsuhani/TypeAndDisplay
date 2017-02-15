@@ -7,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navController: UINavigationController?
 //    var viewController1: RootViewController()
-    var viewController1 = WebViewController()
+    var viewController1 = SecondViewController()
     let splitVC = UISplitViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 //        self.navController?.isNavigationBarHidden = false
 //        let firstVC = MasterViewController()
-//        let secondVC = SecondryViewController()
+//        let secondVC = firstVC.viewContollers.first!
 //        splitVC.viewControllers = [firstVC, secondVC]
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
 //        self.window!.rootViewController = splitVC
