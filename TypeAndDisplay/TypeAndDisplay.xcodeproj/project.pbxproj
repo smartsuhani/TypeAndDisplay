@@ -23,6 +23,30 @@
 		7B2ABA981E23942500EFC05B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2ABA961E23942500EFC05B /* LaunchScreen.storyboard */; };
 		7B2ABAA31E23942500EFC05B /* TypeAndDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2ABAA21E23942500EFC05B /* TypeAndDisplayTests.swift */; };
 		7B2ABAAE1E23942500EFC05B /* TypeAndDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2ABAAD1E23942500EFC05B /* TypeAndDisplayUITests.swift */; };
+		7B2FB6201E5431770083F2A3 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB60C1E5431770083F2A3 /* AFError.swift */; };
+		7B2FB6211E5431770083F2A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB60E1E5431770083F2A3 /* Alamofire.swift */; };
+		7B2FB6221E5431770083F2A3 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB60F1E5431770083F2A3 /* DispatchQueue+Alamofire.swift */; };
+		7B2FB6231E5431770083F2A3 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B2FB6101E5431770083F2A3 /* Info-tvOS.plist */; };
+		7B2FB6241E5431770083F2A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B2FB6111E5431770083F2A3 /* Info.plist */; };
+		7B2FB6251E5431770083F2A3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6121E5431770083F2A3 /* MultipartFormData.swift */; };
+		7B2FB6261E5431770083F2A3 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6131E5431770083F2A3 /* NetworkReachabilityManager.swift */; };
+		7B2FB6271E5431770083F2A3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6141E5431770083F2A3 /* Notifications.swift */; };
+		7B2FB6281E5431770083F2A3 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6151E5431770083F2A3 /* ParameterEncoding.swift */; };
+		7B2FB6291E5431770083F2A3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6161E5431770083F2A3 /* Request.swift */; };
+		7B2FB62A1E5431770083F2A3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6171E5431770083F2A3 /* Response.swift */; };
+		7B2FB62B1E5431770083F2A3 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6181E5431770083F2A3 /* ResponseSerialization.swift */; };
+		7B2FB62C1E5431770083F2A3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6191E5431770083F2A3 /* Result.swift */; };
+		7B2FB62D1E5431770083F2A3 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB61A1E5431770083F2A3 /* ServerTrustPolicy.swift */; };
+		7B2FB62E1E5431770083F2A3 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB61B1E5431770083F2A3 /* SessionDelegate.swift */; };
+		7B2FB62F1E5431770083F2A3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB61C1E5431770083F2A3 /* SessionManager.swift */; };
+		7B2FB6301E5431770083F2A3 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB61D1E5431770083F2A3 /* TaskDelegate.swift */; };
+		7B2FB6311E5431770083F2A3 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB61E1E5431770083F2A3 /* Timeline.swift */; };
+		7B2FB6321E5431770083F2A3 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB61F1E5431770083F2A3 /* Validation.swift */; };
+		7B2FB6361E5431F20083F2A3 /* FetchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6341E5431F20083F2A3 /* FetchViewController.swift */; };
+		7B2FB6371E5431F20083F2A3 /* FetchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2FB6351E5431F20083F2A3 /* FetchViewController.xib */; };
+		7B2FB6501E5450F50083F2A3 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB64E1E5450F50083F2A3 /* CellController.swift */; };
+		7B2FB6511E5450F50083F2A3 /* CellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2FB64F1E5450F50083F2A3 /* CellController.xib */; };
+		7B2FB6561E5467710083F2A3 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2FB6551E5467710083F2A3 /* CustomAnnotation.swift */; };
 		7B3096641E4094FC00AC5FB3 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3096631E4094FC00AC5FB3 /* FifthViewController.swift */; };
 		7B31A0E41E40509C00709EA4 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B31A0E21E40509C00709EA4 /* FourthViewController.swift */; };
 		7B31A0E51E40509C00709EA4 /* FourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B31A0E31E40509C00709EA4 /* FourthViewController.xib */; };
@@ -94,6 +118,51 @@
 		7B2ABAA91E23942500EFC05B /* TypeAndDisplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeAndDisplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2ABAAD1E23942500EFC05B /* TypeAndDisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAndDisplayUITests.swift; sourceTree = "<group>"; };
 		7B2ABAAF1E23942500EFC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2FB60C1E5431770083F2A3 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		7B2FB60D1E5431770083F2A3 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		7B2FB60E1E5431770083F2A3 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		7B2FB60F1E5431770083F2A3 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		7B2FB6101E5431770083F2A3 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		7B2FB6111E5431770083F2A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2FB6121E5431770083F2A3 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		7B2FB6131E5431770083F2A3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		7B2FB6141E5431770083F2A3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7B2FB6151E5431770083F2A3 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		7B2FB6161E5431770083F2A3 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7B2FB6171E5431770083F2A3 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		7B2FB6181E5431770083F2A3 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		7B2FB6191E5431770083F2A3 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7B2FB61A1E5431770083F2A3 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		7B2FB61B1E5431770083F2A3 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		7B2FB61C1E5431770083F2A3 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		7B2FB61D1E5431770083F2A3 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		7B2FB61E1E5431770083F2A3 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		7B2FB61F1E5431770083F2A3 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		7B2FB6341E5431F20083F2A3 /* FetchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchViewController.swift; sourceTree = "<group>"; };
+		7B2FB6351E5431F20083F2A3 /* FetchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FetchViewController.xib; sourceTree = "<group>"; };
+		7B2FB6391E5435180083F2A3 /* AFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		7B2FB63A1E5435180083F2A3 /* Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		7B2FB63B1E5435180083F2A3 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		7B2FB63C1E5435180083F2A3 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		7B2FB63D1E5435180083F2A3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		7B2FB63E1E5435180083F2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2FB63F1E5435180083F2A3 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		7B2FB6401E5435180083F2A3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		7B2FB6411E5435180083F2A3 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7B2FB6421E5435180083F2A3 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		7B2FB6431E5435180083F2A3 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7B2FB6441E5435180083F2A3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		7B2FB6451E5435180083F2A3 /* ResponseSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		7B2FB6461E5435180083F2A3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7B2FB6471E5435180083F2A3 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		7B2FB6481E5435180083F2A3 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		7B2FB6491E5435180083F2A3 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		7B2FB64A1E5435180083F2A3 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		7B2FB64B1E5435180083F2A3 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		7B2FB64C1E5435180083F2A3 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		7B2FB64E1E5450F50083F2A3 /* CellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		7B2FB64F1E5450F50083F2A3 /* CellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellController.xib; sourceTree = "<group>"; };
+		7B2FB6551E5467710083F2A3 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		7B3096631E4094FC00AC5FB3 /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		7B31A0E21E40509C00709EA4 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		7B31A0E31E40509C00709EA4 /* FourthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthViewController.xib; sourceTree = "<group>"; };
@@ -184,6 +253,7 @@
 			children = (
 				7B40D11A1E519F0E00824082 /* User+CoreDataClass.swift */,
 				7B40D11B1E519F0E00824082 /* User+CoreDataProperties.swift */,
+				7B2FB60B1E5431770083F2A3 /* Source */,
 				7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */,
 				7B2ABAA11E23942500EFC05B /* TypeAndDisplayTests */,
 				7B2ABAAC1E23942500EFC05B /* TypeAndDisplayUITests */,
@@ -205,6 +275,7 @@
 		7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				7B2FB6331E5431D30083F2A3 /* AlamoFire */,
 				7B38DAFB1E52D7610006D478 /* web */,
 				7B4D2B781E4DBE390037A360 /* Authentication */,
 				7B37E2F61E49DCFF00B7638E /* MapController */,
@@ -248,6 +319,79 @@
 			path = TypeAndDisplayUITests;
 			sourceTree = "<group>";
 		};
+		7B2FB60B1E5431770083F2A3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7B2FB60C1E5431770083F2A3 /* AFError.swift */,
+				7B2FB60D1E5431770083F2A3 /* Alamofire.h */,
+				7B2FB60E1E5431770083F2A3 /* Alamofire.swift */,
+				7B2FB60F1E5431770083F2A3 /* DispatchQueue+Alamofire.swift */,
+				7B2FB6101E5431770083F2A3 /* Info-tvOS.plist */,
+				7B2FB6111E5431770083F2A3 /* Info.plist */,
+				7B2FB6121E5431770083F2A3 /* MultipartFormData.swift */,
+				7B2FB6131E5431770083F2A3 /* NetworkReachabilityManager.swift */,
+				7B2FB6141E5431770083F2A3 /* Notifications.swift */,
+				7B2FB6151E5431770083F2A3 /* ParameterEncoding.swift */,
+				7B2FB6161E5431770083F2A3 /* Request.swift */,
+				7B2FB6171E5431770083F2A3 /* Response.swift */,
+				7B2FB6181E5431770083F2A3 /* ResponseSerialization.swift */,
+				7B2FB6191E5431770083F2A3 /* Result.swift */,
+				7B2FB61A1E5431770083F2A3 /* ServerTrustPolicy.swift */,
+				7B2FB61B1E5431770083F2A3 /* SessionDelegate.swift */,
+				7B2FB61C1E5431770083F2A3 /* SessionManager.swift */,
+				7B2FB61D1E5431770083F2A3 /* TaskDelegate.swift */,
+				7B2FB61E1E5431770083F2A3 /* Timeline.swift */,
+				7B2FB61F1E5431770083F2A3 /* Validation.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7B2FB6331E5431D30083F2A3 /* AlamoFire */ = {
+			isa = PBXGroup;
+			children = (
+				7B2FB64D1E5450C40083F2A3 /* cell */,
+				7B2FB6341E5431F20083F2A3 /* FetchViewController.swift */,
+				7B2FB6351E5431F20083F2A3 /* FetchViewController.xib */,
+			);
+			name = AlamoFire;
+			sourceTree = "<group>";
+		};
+		7B2FB6381E5435180083F2A3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7B2FB6391E5435180083F2A3 /* AFError.swift */,
+				7B2FB63A1E5435180083F2A3 /* Alamofire.h */,
+				7B2FB63B1E5435180083F2A3 /* Alamofire.swift */,
+				7B2FB63C1E5435180083F2A3 /* DispatchQueue+Alamofire.swift */,
+				7B2FB63D1E5435180083F2A3 /* Info-tvOS.plist */,
+				7B2FB63E1E5435180083F2A3 /* Info.plist */,
+				7B2FB63F1E5435180083F2A3 /* MultipartFormData.swift */,
+				7B2FB6401E5435180083F2A3 /* NetworkReachabilityManager.swift */,
+				7B2FB6411E5435180083F2A3 /* Notifications.swift */,
+				7B2FB6421E5435180083F2A3 /* ParameterEncoding.swift */,
+				7B2FB6431E5435180083F2A3 /* Request.swift */,
+				7B2FB6441E5435180083F2A3 /* Response.swift */,
+				7B2FB6451E5435180083F2A3 /* ResponseSerialization.swift */,
+				7B2FB6461E5435180083F2A3 /* Result.swift */,
+				7B2FB6471E5435180083F2A3 /* ServerTrustPolicy.swift */,
+				7B2FB6481E5435180083F2A3 /* SessionDelegate.swift */,
+				7B2FB6491E5435180083F2A3 /* SessionManager.swift */,
+				7B2FB64A1E5435180083F2A3 /* TaskDelegate.swift */,
+				7B2FB64B1E5435180083F2A3 /* Timeline.swift */,
+				7B2FB64C1E5435180083F2A3 /* Validation.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7B2FB64D1E5450C40083F2A3 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B2FB64E1E5450F50083F2A3 /* CellController.swift */,
+				7B2FB64F1E5450F50083F2A3 /* CellController.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		7B30965E1E40733F00AC5FB3 /* TabBarViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +405,7 @@
 			children = (
 				7B37E2F71E49DD7100B7638E /* MapViewController.swift */,
 				7B37E2F81E49DD7100B7638E /* MapViewController.xib */,
+				7B2FB6551E5467710083F2A3 /* CustomAnnotation.swift */,
 			);
 			name = MapController;
 			sourceTree = "<group>";
@@ -286,6 +431,7 @@
 		7B4D2B9B1E4DE3D00037A360 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B2FB6381E5435180083F2A3 /* Source */,
 				7B4D2B9C1E4DE3D00037A360 /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -463,15 +609,19 @@
 				7B2ABA951E23942500EFC05B /* Assets.xcassets in Resources */,
 				7B781F0A1E3F306300D42A68 /* CellView.xib in Resources */,
 				7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */,
+				7B2FB6241E5431770083F2A3 /* Info.plist in Resources */,
 				7B232C3A1E48754E00844718 /* ScrollCell.xib in Resources */,
+				7B2FB6231E5431770083F2A3 /* Info-tvOS.plist in Resources */,
 				7B10B7021E4C4686004672A1 /* ImageViewController.xib in Resources */,
 				7B31A0E71E405B7400709EA4 /* 1.json in Resources */,
 				7B34AC3A1E3CC5950034DBFB /* photoViewCell.xib in Resources */,
 				7B2ABA931E23942500EFC05B /* Main.storyboard in Resources */,
+				7B2FB6511E5450F50083F2A3 /* CellController.xib in Resources */,
 				7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */,
 				7B232C361E48687300844718 /* EightViewController.xib in Resources */,
 				7B31A0E51E40509C00709EA4 /* FourthViewController.xib in Resources */,
 				7B486B9B1E4B430400DF7A46 /* NinthViewController.xib in Resources */,
+				7B2FB6371E5431F20083F2A3 /* FetchViewController.xib in Resources */,
 				7B38DAFF1E52D78B0006D478 /* WebViewController.xib in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
 				7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */,
@@ -501,26 +651,46 @@
 			files = (
 				7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */,
 				7B40D11D1E519F0E00824082 /* User+CoreDataProperties.swift in Sources */,
+				7B2FB6271E5431770083F2A3 /* Notifications.swift in Sources */,
+				7B2FB62E1E5431770083F2A3 /* SessionDelegate.swift in Sources */,
+				7B2FB6561E5467710083F2A3 /* CustomAnnotation.swift in Sources */,
+				7B2FB6361E5431F20083F2A3 /* FetchViewController.swift in Sources */,
 				7B232C311E48375800844718 /* SeventhViewController.swift in Sources */,
 				7B50641A1E45C1C600191D78 /* SixViewController.swift in Sources */,
 				7B486B9A1E4B430400DF7A46 /* NinthViewController.swift in Sources */,
+				7B2FB6291E5431770083F2A3 /* Request.swift in Sources */,
 				7B4D2B921E4DDEC10037A360 /* DataController.swift in Sources */,
+				7B2FB6221E5431770083F2A3 /* DispatchQueue+Alamofire.swift in Sources */,
 				7B40D11C1E519F0E00824082 /* User+CoreDataClass.swift in Sources */,
 				7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */,
 				7B232C7E1E48975A00844718 /* MasterViewController.swift in Sources */,
+				7B2FB62D1E5431770083F2A3 /* ServerTrustPolicy.swift in Sources */,
 				7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */,
+				7B2FB6281E5431770083F2A3 /* ParameterEncoding.swift in Sources */,
+				7B2FB62C1E5431770083F2A3 /* Result.swift in Sources */,
 				7B4D2B8C1E4DC7AB0037A360 /* Model.xcdatamodeld in Sources */,
+				7B2FB6211E5431770083F2A3 /* Alamofire.swift in Sources */,
 				7B232C351E48687300844718 /* EightViewController.swift in Sources */,
+				7B2FB6501E5450F50083F2A3 /* CellController.swift in Sources */,
+				7B2FB6261E5431770083F2A3 /* NetworkReachabilityManager.swift in Sources */,
+				7B2FB6301E5431770083F2A3 /* TaskDelegate.swift in Sources */,
 				7B38DAFE1E52D78B0006D478 /* WebViewController.swift in Sources */,
+				7B2FB62B1E5431770083F2A3 /* ResponseSerialization.swift in Sources */,
+				7B2FB6251E5431770083F2A3 /* MultipartFormData.swift in Sources */,
+				7B2FB62F1E5431770083F2A3 /* SessionManager.swift in Sources */,
 				7B781F091E3F306300D42A68 /* CellView.swift in Sources */,
 				7B232C391E48754E00844718 /* ScrollCell.swift in Sources */,
 				7B4D2B831E4DBF430037A360 /* RegisterViewController.swift in Sources */,
 				7B31A0E41E40509C00709EA4 /* FourthViewController.swift in Sources */,
+				7B2FB62A1E5431770083F2A3 /* Response.swift in Sources */,
+				7B2FB6201E5431770083F2A3 /* AFError.swift in Sources */,
 				7B3096641E4094FC00AC5FB3 /* FifthViewController.swift in Sources */,
 				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
 				7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */,
+				7B2FB6311E5431770083F2A3 /* Timeline.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,
+				7B2FB6321E5431770083F2A3 /* Validation.swift in Sources */,
 				7B37E2F91E49DD7100B7638E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

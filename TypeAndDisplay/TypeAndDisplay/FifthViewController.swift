@@ -10,6 +10,7 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
     var tab6: MapViewController!
     var tab7: RegisterViewController!
     var tab8: WebViewController!
+    var tab9: FetchViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,9 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
         
         tab8 = WebViewController()
         tab8.tabBarItem = UITabBarItem(title: "web", image: UIImage(named: "web"), selectedImage: UIImage(named: "web"))
+        
+        tab9 = FetchViewController()
+        tab9.tabBarItem = UITabBarItem(title: "image", image: UIImage(named: "image"), selectedImage: UIImage(named: "image"))
         
         self.viewControllers = [tab3,tab4,tab5,tab2,tab1,tab6,tab7,tab8]
 
