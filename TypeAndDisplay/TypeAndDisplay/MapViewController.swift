@@ -107,12 +107,15 @@ class MapViewController: UIViewController,UITextFieldDelegate,CLLocationManagerD
                 }
             }
             print(index)
-            self.mapView.remove(self.routesarr[index])
+            if(self.routesarr.count != 0){
+                self.mapView.remove(self.routesarr[index])
+                self.routesarr.remove(at: index)
+            }
             if(self.matchingItems.count != 0){
                 self.matchingItems.remove(at: index)
             }
             self.a10.remove(at: index)
-            self.routesarr.remove(at: index)
+            
         }
         
         let action2 = UIAlertAction(title: "Create Route", style: .destructive) { (action) in
