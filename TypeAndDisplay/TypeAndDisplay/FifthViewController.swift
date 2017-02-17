@@ -45,7 +45,10 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
         tab9 = FetchViewController()
         tab9.tabBarItem = UITabBarItem(title: "image", image: UIImage(named: "image"), selectedImage: UIImage(named: "image"))
         
-        self.viewControllers = [tab3,tab4,tab5,tab2,tab1,tab6,tab7,tab8]
+        let tab10 = LazyViewController()
+        tab10.tabBarItem = UITabBarItem(title: "lazy", image: nil, selectedImage: nil)
+        
+        self.viewControllers = [tab10,tab3,tab4,tab5,tab2,tab1,tab6,tab7,tab8,tab9]
 
 
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B05B17F1E56F97400D91FC0 /* LazyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B05B17D1E56F97400D91FC0 /* LazyViewController.swift */; };
+		7B05B1801E56F97400D91FC0 /* LazyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B05B17E1E56F97400D91FC0 /* LazyViewController.xib */; };
 		7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */; };
 		7B10B7021E4C4686004672A1 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B10B7001E4C4686004672A1 /* ImageViewController.xib */; };
 		7B232C311E48375800844718 /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B232C301E48375800844718 /* SeventhViewController.swift */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B05B17D1E56F97400D91FC0 /* LazyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyViewController.swift; sourceTree = "<group>"; };
+		7B05B17E1E56F97400D91FC0 /* LazyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LazyViewController.xib; sourceTree = "<group>"; };
 		7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7B10B7001E4C4686004672A1 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		7B232C301E48375800844718 /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
@@ -253,8 +257,8 @@
 				7B2ABA911E23942500EFC05B /* Main.storyboard */,
 				7B2ABA941E23942500EFC05B /* Assets.xcassets */,
 				7B2ABA961E23942500EFC05B /* LaunchScreen.storyboard */,
-				7B2ABA991E23942500EFC05B /* Info.plist */,
 				7B31A0E61E405B7400709EA4 /* 1.json */,
+				7B2ABA991E23942500EFC05B /* Info.plist */,
 				7B4D2B8A1E4DC7AB0037A360 /* Model.xcdatamodeld */,
 				7B4D2B911E4DDEC10037A360 /* DataController.swift */,
 			);
@@ -285,6 +289,8 @@
 				7B2FB64D1E5450C40083F2A3 /* cell */,
 				7B2FB6341E5431F20083F2A3 /* FetchViewController.swift */,
 				7B2FB6351E5431F20083F2A3 /* FetchViewController.xib */,
+				7B05B17D1E56F97400D91FC0 /* LazyViewController.swift */,
+				7B05B17E1E56F97400D91FC0 /* LazyViewController.xib */,
 			);
 			name = AlamoFire;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				7B37E2FA1E49DD7100B7638E /* MapViewController.xib in Resources */,
 				7B232C361E48687300844718 /* EightViewController.xib in Resources */,
 				7B31A0E51E40509C00709EA4 /* FourthViewController.xib in Resources */,
+				7B05B1801E56F97400D91FC0 /* LazyViewController.xib in Resources */,
 				7B486B9B1E4B430400DF7A46 /* NinthViewController.xib in Resources */,
 				7B2FB6371E5431F20083F2A3 /* FetchViewController.xib in Resources */,
 				7B38DAFF1E52D78B0006D478 /* WebViewController.xib in Resources */,
@@ -602,6 +609,7 @@
 				7B31A0E41E40509C00709EA4 /* FourthViewController.swift in Sources */,
 				7B3096641E4094FC00AC5FB3 /* FifthViewController.swift in Sources */,
 				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
+				7B05B17F1E56F97400D91FC0 /* LazyViewController.swift in Sources */,
 				7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */,
 				7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */,
 				7B2ABA8E1E23942500EFC05B /* AppDelegate.swift in Sources */,
