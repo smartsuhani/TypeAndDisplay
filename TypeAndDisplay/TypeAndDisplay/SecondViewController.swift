@@ -26,10 +26,13 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         let pickerView = UIPickerView()
         pickerView.delegate = self
         txtInput2.inputView = pickerView
-        view1 = UIView(frame: self.view.frame)
+        view1 = UIView(frame: CGRect(x:0,y:500,width:self.view.frame.width+80,height:70))
+        view1.center.x = self.view.center.x
         self.view.addSubview(view1)
         let lbl = UILabel()
         lbl.frame = CGRect(x:30,y:20,width:100,height:50)
+        lbl.center.x = view1.center.x
+        lbl.center.y = view1.center.y
         lbl.text = "Welcome"
         lbl.textColor = UIColor.black
         view1.addSubview(lbl)
@@ -39,8 +42,6 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         UIView.setAnimationDuration(5)
         UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
             print(self.view.center)
-            lbl.center.x = self.view.center.x+lbl.frame.width/2
-            lbl.center.y = self.view.center.y+lbl.frame.height/2
             let scale = CGAffineTransform(scaleX: 2, y: 2)
             lbl.transform = scale
             lbl.textColor = UIColor.blue
@@ -54,12 +55,9 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
 
         UIView.setAnimationDuration(8)
         UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
-                lbl.textColor = UIColor.red
-        lbl.textColor = UIColor.green
+        lbl.textColor = UIColor.red
         lbl.alpha = 0
-
         UIView.commitAnimations()
-        
         
         
         // Do any additional setup after loading the view.
@@ -87,7 +85,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func r(){
         print("adloa")
-        self.view1.removeFromSuperview()
+                self.view1.removeFromSuperview()
     }
 
     
