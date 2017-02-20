@@ -2,25 +2,38 @@ import UIKit
 
 class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet var indicator: UIActivityIndicatorView!
+    @IBOutlet var view1: UIView!
     @IBOutlet var tblView: UITableView!
     var dataDict: [AnyObject]!
-    
-    
+    var stop = 0
+    var page = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataDict = []
         
-        connect("http://127.0.0.1:8087/mongoose/fetchall")
+        connect("http://127.0.0.1:8087/mongoose/fetchall/0")
         
         tblView.delegate = self
         tblView.dataSource = self
         tblView.register(UINib(nibName:"CellController",bundle: nil), forCellReuseIdentifier: "CellController")
         
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.row == self.dataDict.count - 1 && stop != 100){
+           UIView.animate(withDuration: 8, delay: 2, options: .curveEaseIn, animations: {
+                self.view1.isHidden = false
+                self.indicator.startAnimating()
+            }, completion: { (Bool) in
+                self.view1.isHidden = true
+                self.indicator.stopAnimating()
+                self.page += 1
+                self.connect("http://127.0.0.1:8087/mongoose/fetchall/" + String(describing: self.page))
+            })
+        }
         let cell = tblView.dequeueReusableCell(withIdentifier: "CellController", for: indexPath) as! CellController
         let dictionary = self.dataDict[indexPath.row] as! [String:AnyObject]
         cell.t1.text = "Name: "
@@ -57,7 +70,13 @@ class LazyViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             print(dataString!)
             do{
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as AnyObject
-                self.dataDict = json.value(forKey: "user") as? [AnyObject]
+                if let array = json.value(forKey: "user") as? [AnyObject]{
+                    for i in array {
+                        self.dataDict.append(i as AnyObject)
+                    }
+                }else if let stop = json.value(forKey: "stop"){
+                    self.stop = stop as! Int
+                }
                 DispatchQueue.main.async(execute: { () -> Void in
                     self.tblView.reloadData()
                 })
