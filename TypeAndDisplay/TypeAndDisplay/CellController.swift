@@ -10,6 +10,10 @@ import UIKit
 
 class CellController: UITableViewCell {
 
+    @IBOutlet var t2: UILabel!
+    @IBOutlet var t1: UILabel!
+    @IBOutlet var t3: UILabel!
+    @IBOutlet var t4: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

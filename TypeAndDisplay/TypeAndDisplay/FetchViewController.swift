@@ -13,7 +13,8 @@ class FetchViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet var tblView: UITableView!
     var data: [AnyObject]!
     var refresh: UIRefreshControl!
-    var task: URLSessionDownloadTask!
+    var task: URLSessionDataTask!
+    var task1: URLSessionDownloadTask!
     var session: URLSession!
     var cache: NSCache<AnyObject,AnyObject>!
     
@@ -21,7 +22,8 @@ class FetchViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
         
         session = URLSession.shared
-        task = URLSessionDownloadTask()
+        task = URLSessionDataTask()
+        task1 = URLSessionDownloadTask()
         
         refresh = UIRefreshControl()
         refresh.backgroundColor = UIColor.clear
@@ -33,20 +35,19 @@ class FetchViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         tblView.delegate = self
         tblView.dataSource = self
-        tblView.register(UINib(nibName: "CellController",bundle: nil), forCellReuseIdentifier: "CellController")
+        tblView.register(UINib(nibName: "CellViewController",bundle: nil), forCellReuseIdentifier: "CellViewController")
         
     }
 
     func reloadTable(){
-        let url:URL! = URL(string: "https://itunes.apple.com/search?term=flappy&entity=software")
-        task = session.downloadTask(with: url, completionHandler: { (location: URL?, response: URLResponse?, error: Error?) -> Void in
-            
+        let url:URL! = URL(string: "http://127.0.0.1:8087/mongoose/fetchUser")
+        task = session.dataTask(with: url, completionHandler: { (location: Data?, response: URLResponse?, error: Error?) -> Void in
             if location != nil{
-                let data:Data! = try? Data(contentsOf: location!)
+                let data:Data! = location!
                 do{
                     let dic = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as AnyObject
                     print(dic)
-                    self.data = dic.value(forKey : "results") as? [AnyObject]
+                    self.data = dic.value(forKey : "user") as? [AnyObject]
                     DispatchQueue.main.async(execute: { () -> Void in
                         self.tblView.reloadData()
                         self.refresh?.endRefreshing()
@@ -70,29 +71,31 @@ class FetchViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellController", for: indexPath) as! CellController
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellViewController", for: indexPath) as! CellViewController
         let dictionary = self.data[(indexPath as NSIndexPath).row] as! [String:AnyObject]
-        cell.textLabel!.text = dictionary["trackName"] as? String
-        cell.imageView?.image = UIImage(named: "placeholder")
+        cell.txtLable!.text = dictionary["username"] as? String
+        cell.imgView?.image = UIImage(named: "placeholder")
         
         if (self.cache.object(forKey: (indexPath as NSIndexPath).row as AnyObject) != nil){
             // 2
             // Use cache
             print("Cached image used, no need to download it")
-            cell.imageView?.image = self.cache.object(forKey: (indexPath as NSIndexPath).row as AnyObject) as? UIImage
+            cell.imgView?.image = self.cache.object(forKey: (indexPath as NSIndexPath).row as AnyObject) as? UIImage
         }else{
             // 3
-            let artworkUrl = dictionary["artworkUrl100"] as! String
+            print(dictionary["pic"]!)
+            let artworkUrl = "http://127.0.0.1:8087/get/image/?q=" + (dictionary["pic"] as! String)
+            print(artworkUrl)
             let url:URL! = URL(string: artworkUrl)
-            task = session.downloadTask(with: url, completionHandler: { (location, response, error) -> Void in
-                if let data = try? Data(contentsOf: url){
+            task = session.dataTask(with: url, completionHandler: { (location: Data?, response: URLResponse?, error: Error?) -> Void in
+                if let data = location{
                     // 4
                     DispatchQueue.main.async(execute: { () -> Void in
                         // 5
                         // Before we assign the image, check whether the current cell is visible
-                        if let updateCell = tableView.cellForRow(at: indexPath) {
+                        if let updateCell = tableView.cellForRow(at: indexPath) as? CellViewController{
                             let img:UIImage! = UIImage(data: data)
-                            updateCell.imageView?.image = img
+                            updateCell.imgView?.image = img
                             self.cache.setObject(img, forKey: (indexPath as NSIndexPath).row as AnyObject)
                         }
                     })
