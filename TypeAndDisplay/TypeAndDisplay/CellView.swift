@@ -1,4 +1,5 @@
 import UIKit
+import CoreImage
 
 class CellView: UITableViewCell{
 
@@ -7,6 +8,7 @@ class CellView: UITableViewCell{
     @IBOutlet var lblSubtitle: UILabel!
     var rightBtn = UIButton()
     var leftBtn = UIButton()
+    @IBOutlet var imgBarcode: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -17,7 +19,16 @@ class CellView: UITableViewCell{
         let rightSwipe = UISwipeGestureRecognizer(target: self, action:#selector(CellView.swipe(sender:)))
         leftSwipe.direction = .left;
         self.addGestureRecognizer(rightSwipe)
-
+        
+        imgBarcode.image = self.fromString(string: lblName.text!)
+    }
+    
+    func fromString(string : String) -> UIImage? {
+        
+        let data = string.data(using: String.Encoding.ascii)
+        let filter = CIFilter(name: "CICode128BarcodeGenerator")
+        filter?.setValue(data, forKey: "inputMessage")
+        return UIImage(ciImage: (filter?.outputImage)!)
         
     }
     
