@@ -43,12 +43,14 @@ class FifthViewController: UITabBarController,UITabBarControllerDelegate {
         tab8.tabBarItem = UITabBarItem(title: "web", image: UIImage(named: "web"), selectedImage: UIImage(named: "web"))
         
         tab9 = FetchViewController()
-        tab9.tabBarItem = UITabBarItem(title: "image", image: UIImage(named: "image"), selectedImage: UIImage(named: "image"))
+        tab9.tabBarItem = UITabBarItem(title: "FetchList", image: nil, selectedImage: nil)
         
         let tab10 = LazyViewController()
         tab10.tabBarItem = UITabBarItem(title: "lazy", image: nil, selectedImage: nil)
+        let tab11 = DrawingViewController()
+        tab11.tabBarItem = UITabBarItem(title: "Drawing", image: nil, selectedImage: nil)
         
-        self.viewControllers = [tab10,tab3,tab4,tab5,tab2,tab1,tab6,tab7,tab8,tab9]
+        self.viewControllers = [tab10,tab3,tab4,tab5,tab2,tab1,tab6,tab7,tab8,tab9,tab11]
 
 
     }

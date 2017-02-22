@@ -1,4 +1,5 @@
 import UIKit
+import UserNotifications
 
 class SecondViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
 
@@ -26,13 +27,10 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         let pickerView = UIPickerView()
         pickerView.delegate = self
         txtInput2.inputView = pickerView
-        view1 = UIView(frame: CGRect(x:0,y:500,width:self.view.frame.width+80,height:70))
-        view1.center.x = self.view.center.x
+        view1 = UIView(frame: CGRect(x:0,y:450,width:self.view.frame.width+80,height:70))
         self.view.addSubview(view1)
         let lbl = UILabel()
-        lbl.frame = CGRect(x:30,y:20,width:100,height:50)
-        lbl.center.x = view1.center.x
-        lbl.center.y = view1.center.y
+        lbl.frame = CGRect(x:0,y:20,width:100,height:50)
         lbl.text = "Welcome"
         lbl.textColor = UIColor.black
         view1.addSubview(lbl)
@@ -42,6 +40,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         UIView.setAnimationDuration(5)
         UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
             print(self.view.center)
+            lbl.center.x = self.view.center.x + 50
             let scale = CGAffineTransform(scaleX: 2, y: 2)
             lbl.transform = scale
             lbl.textColor = UIColor.blue
@@ -56,6 +55,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         UIView.setAnimationDuration(8)
         UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
         lbl.textColor = UIColor.red
+        lbl.textColor = UIColor.green
         lbl.alpha = 0
         UIView.commitAnimations()
         
@@ -133,6 +133,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
             tablecelltext.append(txtInput1.text!)
             print(tablecelltext)
             table.reloadData()
+            self.notify(tablecelltext.count - 1)
         }
     }
     
@@ -232,6 +233,7 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         cell.lblName.text = self.tablecelltext[indexPath.row]
         cell.lblSubtitle.text = "Name of Person"
+        cell.imgBarcode.image = cell.fromString(string: self.tablecelltext[indexPath.row])
         cell.imgView.image = UIImage(named: "Google")
         
         return cell
@@ -301,5 +303,42 @@ class SecondViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
       txtInput2.text = "\(picker1[pickerView.selectedRow(inComponent: 0)])/\(picker2[pickerView.selectedRow(inComponent: 1)])"
+    }
+    
+    func notify(_ indexPath: Int){
+        let notify = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert,.sound]
+        
+        notify.requestAuthorization(options: options) { (granted,error) in
+            if !granted {
+                print("somting wrong happening!")
+            }
+        }
+        
+        notify.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                print("app is not authorized to generate notification!")
+            }else{
+                
+            }
+        }
+        
+        
+        let noteContent = UNMutableNotificationContent()
+        noteContent.title = "User Added"
+        noteContent.body = self.tablecelltext[indexPath]
+        noteContent.sound = UNNotificationSound.default()
+        noteContent.setValue(true, forKey: "shouldAlwaysAlertWhileAppIsForeground")
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2.0, repeats: false)
+        
+        let identifier = "UserAddedNotificaion"
+        let req = UNNotificationRequest(identifier: identifier, content: noteContent, trigger: trigger)
+        
+        notify.add(req) { (error) in
+            if let err = error {
+                print("\(err)error in notification generation!")
+            }
+        }
     }
 }

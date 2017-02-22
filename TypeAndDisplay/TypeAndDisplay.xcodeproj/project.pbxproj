@@ -59,6 +59,9 @@
 		7B781F091E3F306300D42A68 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B781F071E3F306300D42A68 /* CellView.swift */; };
 		7B781F0A1E3F306300D42A68 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B781F081E3F306300D42A68 /* CellView.xib */; };
 		7B781F0D1E3F67B600D42A68 /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B781F0C1E3F67B600D42A68 /* 1.txt */; };
+		7BA163F71E5C61E300F5DE29 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA163F51E5C61E300F5DE29 /* DrawingViewController.swift */; };
+		7BA163F81E5C61E300F5DE29 /* DrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA163F61E5C61E300F5DE29 /* DrawingViewController.xib */; };
+		7BA163FA1E5C629500F5DE29 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA163F91E5C629500F5DE29 /* HSBColorPicker.swift */; };
 		7BCB04F21E38BDCE0075A579 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */; };
 		7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */; };
 /* End PBXBuildFile section */
@@ -160,6 +163,9 @@
 		7B781F071E3F306300D42A68 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		7B781F081E3F306300D42A68 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		7B781F0C1E3F67B600D42A68 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
+		7BA163F51E5C61E300F5DE29 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		7BA163F61E5C61E300F5DE29 /* DrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingViewController.xib; sourceTree = "<group>"; };
+		7BA163F91E5C629500F5DE29 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		7BCB04F01E38BDCE0075A579 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7BCB04F11E38BDCE0075A579 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +249,7 @@
 		7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				7BA163F01E5C3D5D00F5DE29 /* scene */,
 				7B2FB6331E5431D30083F2A3 /* AlamoFire */,
 				7B38DAFB1E52D7610006D478 /* web */,
 				7B4D2B781E4DBE390037A360 /* Authentication */,
@@ -258,13 +265,13 @@
 				7B781F051E3F2FC000D42A68 /* Views */,
 				7B2ABA8D1E23942500EFC05B /* AppDelegate.swift */,
 				7B2ABA8F1E23942500EFC05B /* ViewController.swift */,
+				7B4D2B911E4DDEC10037A360 /* DataController.swift */,
 				7B2ABA911E23942500EFC05B /* Main.storyboard */,
 				7B2ABA941E23942500EFC05B /* Assets.xcassets */,
 				7B2ABA961E23942500EFC05B /* LaunchScreen.storyboard */,
 				7B31A0E61E405B7400709EA4 /* 1.json */,
 				7B2ABA991E23942500EFC05B /* Info.plist */,
 				7B4D2B8A1E4DC7AB0037A360 /* Model.xcdatamodeld */,
-				7B4D2B911E4DDEC10037A360 /* DataController.swift */,
 			);
 			path = TypeAndDisplay;
 			sourceTree = "<group>";
@@ -436,6 +443,16 @@
 			name = "Core Animation";
 			sourceTree = "<group>";
 		};
+		7BA163F01E5C3D5D00F5DE29 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				7BA163F91E5C629500F5DE29 /* HSBColorPicker.swift */,
+				7BA163F51E5C61E300F5DE29 /* DrawingViewController.swift */,
+				7BA163F61E5C61E300F5DE29 /* DrawingViewController.xib */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -548,6 +565,7 @@
 			files = (
 				7B2ABA981E23942500EFC05B /* LaunchScreen.storyboard in Resources */,
 				7B4D2B841E4DBF430037A360 /* RegisterViewController.xib in Resources */,
+				7BA163F81E5C61E300F5DE29 /* DrawingViewController.xib in Resources */,
 				7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */,
 				7B5064201E45E8FD00191D78 /* RootViewController.xib in Resources */,
 				7B232C7F1E48975A00844718 /* MasterViewController.xib in Resources */,
@@ -603,9 +621,11 @@
 				7B486B9A1E4B430400DF7A46 /* NinthViewController.swift in Sources */,
 				7B4D2B921E4DDEC10037A360 /* DataController.swift in Sources */,
 				7B40D11C1E519F0E00824082 /* User+CoreDataClass.swift in Sources */,
+				7BA163F71E5C61E300F5DE29 /* DrawingViewController.swift in Sources */,
 				7B33282F1E38884C00814C0C /* SecondViewController.swift in Sources */,
 				7B232C7E1E48975A00844718 /* MasterViewController.swift in Sources */,
 				7B2ABA901E23942500EFC05B /* ViewController.swift in Sources */,
+				7BA163FA1E5C629500F5DE29 /* HSBColorPicker.swift in Sources */,
 				7B4D2B8C1E4DC7AB0037A360 /* Model.xcdatamodeld in Sources */,
 				7B232C351E48687300844718 /* EightViewController.swift in Sources */,
 				7B1D52D01E5AF3D900340F75 /* CellViewController.swift in Sources */,
