@@ -51,12 +51,12 @@
                                 </barButtonItem>
                             </leftBarButtonItems>
                             <rightBarButtonItems>
-                                <barButtonItem style="plain" systemItem="compose" id="IAX-vU-NqA">
+                                <barButtonItem style="done" systemItem="compose" id="IAX-vU-NqA">
                                     <connections>
                                         <action selector="saveImage:" destination="-1" id="gHf-v9-bQT"/>
                                     </connections>
                                 </barButtonItem>
-                                <barButtonItem style="plain" id="F1d-Wn-36n">
+                                <barButtonItem style="done" id="F1d-Wn-36n">
                                     <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="9dd-YC-qFC">
                                         <rect key="frame" x="236" y="7" width="83" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
