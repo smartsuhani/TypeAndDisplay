@@ -7,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navController: UINavigationController?
 //    var viewController1: RootViewController()
-    var viewController1 = SecondViewController()
+    var viewController1 = DynamicTableHeaderVC()
     let splitVC = UISplitViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

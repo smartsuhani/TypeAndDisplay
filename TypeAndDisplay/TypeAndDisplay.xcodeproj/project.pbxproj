@@ -11,6 +11,12 @@
 		7B05B1801E56F97400D91FC0 /* LazyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B05B17E1E56F97400D91FC0 /* LazyViewController.xib */; };
 		7B10B7011E4C4686004672A1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */; };
 		7B10B7021E4C4686004672A1 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B10B7001E4C4686004672A1 /* ImageViewController.xib */; };
+		7B15D20A1E7BE64400133833 /* DynamicTableHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15D2081E7BE64400133833 /* DynamicTableHeaderVC.swift */; };
+		7B15D20B1E7BE64400133833 /* DynamicTableHeaderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B15D2091E7BE64400133833 /* DynamicTableHeaderVC.xib */; };
+		7B15D20E1E7BE66700133833 /* DTHCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15D20C1E7BE66700133833 /* DTHCellTableViewCell.swift */; };
+		7B15D20F1E7BE66700133833 /* DTHCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B15D20D1E7BE66700133833 /* DTHCellTableViewCell.xib */; };
+		7B15D2121E7C05E400133833 /* downArrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B15D2101E7C05E400133833 /* downArrow1.png */; };
+		7B15D2131E7C05E400133833 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B15D2111E7C05E400133833 /* rightArrow.png */; };
 		7B1D52D01E5AF3D900340F75 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1D52CE1E5AF3D900340F75 /* CellViewController.swift */; };
 		7B1D52D11E5AF3D900340F75 /* CellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B1D52CF1E5AF3D900340F75 /* CellViewController.xib */; };
 		7B232C311E48375800844718 /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B232C301E48375800844718 /* SeventhViewController.swift */; };
@@ -88,6 +94,12 @@
 		7B05B17E1E56F97400D91FC0 /* LazyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LazyViewController.xib; sourceTree = "<group>"; };
 		7B10B6FF1E4C4686004672A1 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7B10B7001E4C4686004672A1 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		7B15D2081E7BE64400133833 /* DynamicTableHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTableHeaderVC.swift; sourceTree = "<group>"; };
+		7B15D2091E7BE64400133833 /* DynamicTableHeaderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DynamicTableHeaderVC.xib; sourceTree = "<group>"; };
+		7B15D20C1E7BE66700133833 /* DTHCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTHCellTableViewCell.swift; sourceTree = "<group>"; };
+		7B15D20D1E7BE66700133833 /* DTHCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTHCellTableViewCell.xib; sourceTree = "<group>"; };
+		7B15D2101E7C05E400133833 /* downArrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow1.png; sourceTree = "<group>"; };
+		7B15D2111E7C05E400133833 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		7B1D52CE1E5AF3D900340F75 /* CellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		7B1D52CF1E5AF3D900340F75 /* CellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellViewController.xib; sourceTree = "<group>"; };
 		7B232C301E48375800844718 /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +207,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B15D2071E7BE5AD00133833 /* DynamicTableHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				7B15D2081E7BE64400133833 /* DynamicTableHeaderVC.swift */,
+				7B15D2091E7BE64400133833 /* DynamicTableHeaderVC.xib */,
+				7B15D20C1E7BE66700133833 /* DTHCellTableViewCell.swift */,
+				7B15D20D1E7BE66700133833 /* DTHCellTableViewCell.xib */,
+			);
+			name = DynamicTableHeaders;
+			sourceTree = "<group>";
+		};
 		7B232C2F1E48372E00844718 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +272,9 @@
 		7B2ABA8C1E23942500EFC05B /* TypeAndDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				7B15D2101E7C05E400133833 /* downArrow1.png */,
+				7B15D2111E7C05E400133833 /* rightArrow.png */,
+				7B15D2071E7BE5AD00133833 /* DynamicTableHeaders */,
 				7BA163F01E5C3D5D00F5DE29 /* scene */,
 				7B2FB6331E5431D30083F2A3 /* AlamoFire */,
 				7B38DAFB1E52D7610006D478 /* web */,
@@ -567,6 +593,7 @@
 				7B4D2B841E4DBF430037A360 /* RegisterViewController.xib in Resources */,
 				7BA163F81E5C61E300F5DE29 /* DrawingViewController.xib in Resources */,
 				7BCB04F31E38BDCE0075A579 /* ThirdViewController.xib in Resources */,
+				7B15D20F1E7BE66700133833 /* DTHCellTableViewCell.xib in Resources */,
 				7B5064201E45E8FD00191D78 /* RootViewController.xib in Resources */,
 				7B232C7F1E48975A00844718 /* MasterViewController.xib in Resources */,
 				7B2ABA951E23942500EFC05B /* Assets.xcassets in Resources */,
@@ -587,6 +614,9 @@
 				7B2FB6371E5431F20083F2A3 /* FetchViewController.xib in Resources */,
 				7B38DAFF1E52D78B0006D478 /* WebViewController.xib in Resources */,
 				7B3328301E38884C00814C0C /* SecondViewController.xib in Resources */,
+				7B15D2131E7C05E400133833 /* rightArrow.png in Resources */,
+				7B15D2121E7C05E400133833 /* downArrow1.png in Resources */,
+				7B15D20B1E7BE64400133833 /* DynamicTableHeaderVC.xib in Resources */,
 				7B50641B1E45C1C600191D78 /* SixViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +642,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B15D20A1E7BE64400133833 /* DynamicTableHeaderVC.swift in Sources */,
 				7B50641F1E45E8FD00191D78 /* RootViewController.swift in Sources */,
 				7B40D11D1E519F0E00824082 /* User+CoreDataProperties.swift in Sources */,
 				7B2FB6561E5467710083F2A3 /* CustomAnnotation.swift in Sources */,
@@ -635,6 +666,7 @@
 				7B232C391E48754E00844718 /* ScrollCell.swift in Sources */,
 				7B4D2B831E4DBF430037A360 /* RegisterViewController.swift in Sources */,
 				7B31A0E41E40509C00709EA4 /* FourthViewController.swift in Sources */,
+				7B15D20E1E7BE66700133833 /* DTHCellTableViewCell.swift in Sources */,
 				7B3096641E4094FC00AC5FB3 /* FifthViewController.swift in Sources */,
 				7B34AC391E3CC5950034DBFB /* photoViewCell.swift in Sources */,
 				7B05B17F1E56F97400D91FC0 /* LazyViewController.swift in Sources */,
